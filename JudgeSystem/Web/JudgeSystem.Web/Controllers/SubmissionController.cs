@@ -149,6 +149,7 @@ namespace JudgeSystem.Web.Controllers
             }
             else
             {
+                //ToDo: create method here to replace placeholder
                 SubmissionCodeDto submissionCode = await utilityService.ExtractSubmissionCode(model.Code, model.File, model.ProgrammingLanguage);
                 if (problemSubmissionDto.AllowedMinCodeDifferenceInPercentage > 0 && problemSubmissionDto.SubmissionType == SubmissionType.PlainCode)
                 {
