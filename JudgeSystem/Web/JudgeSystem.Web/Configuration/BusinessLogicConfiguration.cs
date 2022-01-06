@@ -51,6 +51,7 @@ namespace JudgeSystem.Web.Configuration
             services.AddTransient<IUserValidationService, UserValidationService>();
             services.AddTransient<IEmailValidationService, EmailValidationService>();
 
+            services.AddTransient<IPlaceholderService, PlaceholderService>();
             return services;
         }
     }

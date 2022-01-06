@@ -2,12 +2,12 @@
 using Microsoft.AspNetCore.Hosting;
 using Serilog;
 using System.IO;
-
+//2 usings
 namespace JudgeSystem.Web
 {
     public static class Program
     {
-        public static void Main(string[] args) => CreateWebHostBuilder(args).Build().Run();
+        public static void Main(string[] args) => CreateWebHostBuilder(args).Build().Run();  // 3 run
 
         private static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
@@ -26,4 +26,6 @@ namespace JudgeSystem.Web
             .UseApplicationInsights()
             .UseStartup<Startup>();
     }
+
+    //1 method
 }

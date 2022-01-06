@@ -96,6 +96,12 @@ namespace JudgeSystem.Common
         public const int RecommendedLessonsCachingMinutes = 60;
         #endregion
 
+        #region Placeholder constants
+        public const string StartPlaceholder = "///RenderStart///";
+        public const string MethodPlaceholder = "///RenderJudge///";
+        public const string Usings = "";
+        #endregion
+
         public static string ConsoleFile
         {
             get
