@@ -293,6 +293,9 @@
   </data>
   <data name="Extra Task" xml:space="preserve">
     <value>Допълнителна задача</value>
+  </data> 
+    <data name="Has Placeholder" xml:space="preserve">
+    <value>Има плейсхолдър</value>
   </data>
   <data name="First name" xml:space="preserve">
     <value>Собствено име</value>

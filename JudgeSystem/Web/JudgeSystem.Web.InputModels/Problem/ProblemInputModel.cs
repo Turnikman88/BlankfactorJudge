@@ -55,5 +55,16 @@ namespace JudgeSystem.Web.InputModels.Problem
 
         [Display(Name = ProblemTestingStrategyDisplayName)]
         public TestingStrategy TestingStrategy { get; set; }
+
+        [Display(Name = HasPlaceholderDisplayName)]
+        public bool HasPlaceholder { get; set; }
+
+        [Display(Name = StartPlaceholderDisplayName)]
+        [StringLength(3000, MinimumLength = 3)]
+        public string StartPlaceholder { get; set; }
+
+        [Display(Name = MethodPlaceholderDisplayName)]
+        [StringLength(30000, MinimumLength = 10)]
+        public string MethodPlaceholder { get; set; }
     }
 }
