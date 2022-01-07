@@ -32,6 +32,7 @@ namespace JudgeSystem.Web.Controllers
         private readonly IContestService contestService;
         private readonly ICodeCompareer codeCompareer;
         private readonly IDistributedCache cache;
+        private readonly IPlaceholderService placeholderService;
 
         public SubmissionController(
             UserManager<ApplicationUser> userManager,
@@ -40,7 +41,8 @@ namespace JudgeSystem.Web.Controllers
             IUtilityService utilityService,
             IContestService contestService,
             ICodeCompareer codeCompareer,
-            IDistributedCache cache)
+            IDistributedCache cache,
+            IPlaceholderService placeholderService)
         {
             this.userManager = userManager;
             this.submissionService = submissionService;
@@ -49,6 +51,7 @@ namespace JudgeSystem.Web.Controllers
             this.contestService = contestService;
             this.codeCompareer = codeCompareer;
             this.cache = cache;
+            this.placeholderService = placeholderService;
         }
 
         public IActionResult Details(int id)
@@ -120,6 +123,16 @@ namespace JudgeSystem.Web.Controllers
 
             ProblemSubmissionDto problemSubmissionDto = await problemService.GetById<ProblemSubmissionDto>(model.ProblemId);
             int timeIntervalBetweenSubmissionInSeconds = problemSubmissionDto.TimeIntervalBetweenSubmissionInSeconds;
+            if (problemSubmissionDto.HasPlaceholder)
+            {
+                if (placeholderService.IsPlaceholderMissing(model.Code))
+                {
+                    return BadRequest(ErrorMessages.PlaceholderMissingMessage);
+                }
+
+                placeholderService.ReplacePlaceholders(model.Code, problemSubmissionDto.StartPlaceholder,
+                    problemSubmissionDto.MethodPlaceholder);
+            }
             if (timeIntervalBetweenSubmissionInSeconds >= GlobalConstants.DefaultTimeIntervalBetweenSubmissionInSeconds)
             {
                 string key = $"{User.Identity.Name}#{nameof(model.ProblemId)}:{model.ProblemId}";

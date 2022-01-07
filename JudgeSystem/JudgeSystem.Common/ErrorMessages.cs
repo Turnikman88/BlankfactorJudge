@@ -2,6 +2,8 @@
 {
     public static class ErrorMessages
 	{
+        public const string PlaceholderMissingMessage = "Dont't remove the placeholders!";
+
         public const string NotFoundEntityMessage = "The required {0} was not found!";
 
 		public const string DiffrentLessonPasswords = "Invalid old password.";

@@ -97,7 +97,7 @@ namespace JudgeSystem.Services.Data.Tests
             IRepository<UserPractice> userPracticeRepository = new EfRepository<UserPractice>(context);
             var studentServiceMock = new Mock<IStudentService>();
             studentServiceMock.Setup(x => x.Delete(studentId));
-            var userService = new UserService(null, userPracticeRepository, userContestRepository, studentServiceMock.Object);
+            var userService = new UserService(null, userPracticeRepository, userContestRepository, studentServiceMock.Object, null, null);
 
             await userService.DeleteUserData(user.Id, studentId);
 
@@ -140,7 +140,7 @@ namespace JudgeSystem.Services.Data.Tests
         {
             var reposotiryMock = new Mock<IDeletableEntityRepository<ApplicationUser>>();
             reposotiryMock.Setup(x => x.All()).Returns(testData);
-            return new UserService(reposotiryMock.Object, null, null, null);
+            return new UserService(reposotiryMock.Object, null, null, null, null, null);
         }
 
         private List<ApplicationUser> GetContestResultsTestData()

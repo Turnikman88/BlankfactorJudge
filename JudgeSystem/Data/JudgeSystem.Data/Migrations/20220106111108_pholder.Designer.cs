@@ -4,18 +4,20 @@ using JudgeSystem.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace JudgeSystem.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220106111108_pholder")]
+    partial class pholder
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
+                .HasAnnotation("ProductVersion", "2.2.3-servicing-35854")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -378,8 +380,6 @@ namespace JudgeSystem.Data.Migrations
 
                     b.Property<int>("MaxPoints");
 
-                    b.Property<string>("MethodPlaceholder");
-
                     b.Property<DateTime?>("ModifiedOn");
 
                     b.Property<string>("Name")
@@ -387,8 +387,6 @@ namespace JudgeSystem.Data.Migrations
                         .HasMaxLength(30);
 
                     b.Property<int>("OrderBy");
-
-                    b.Property<string>("StartPlaceholder");
 
                     b.Property<int>("SubmissionType");
 

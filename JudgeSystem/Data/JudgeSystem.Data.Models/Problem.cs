@@ -23,7 +23,9 @@ namespace JudgeSystem.Data.Models
 
         public bool IsExtraTask { get; set; }
 
-		public int MaxPoints { get; set; }
+        public bool HasPlaceholder { get; set; }
+
+        public int MaxPoints { get; set; }
 
         public int AllowedTimeInMilliseconds { get; set; }
 
@@ -45,5 +47,9 @@ namespace JudgeSystem.Data.Models
         public ICollection<Test> Tests { get; set; }
 
 		public ICollection<Submission> Submissions { get; set; }
-	}
+
+        public string StartPlaceholder { get; set; }
+
+        public string MethodPlaceholder { get; set; }
+    }
 }
