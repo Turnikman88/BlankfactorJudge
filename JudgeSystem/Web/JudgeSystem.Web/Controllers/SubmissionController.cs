@@ -130,7 +130,7 @@ namespace JudgeSystem.Web.Controllers
                     return BadRequest(ErrorMessages.PlaceholderMissingMessage);
                 }
 
-                placeholderService.ReplacePlaceholders(model.Code, problemSubmissionDto.StartPlaceholder,
+                model.Code =  placeholderService.ReplacePlaceholders(model.Code, problemSubmissionDto.StartPlaceholder,
                     problemSubmissionDto.MethodPlaceholder);
             }
             if (timeIntervalBetweenSubmissionInSeconds >= GlobalConstants.DefaultTimeIntervalBetweenSubmissionInSeconds)
