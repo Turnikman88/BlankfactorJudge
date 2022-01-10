@@ -168,15 +168,18 @@ namespace JudgeSystem.Web.Controllers
                 string codeToExecute = placeholderCode == null ? model.Code : placeholderCode;
 
                 SubmissionCodeDto submissionCode = await utilityService.ExtractSubmissionCode(codeToExecute, model.File, model.ProgrammingLanguage);
+
+                IEnumerable<string> otherUsersSubmissions = submissionService.GetProblemSubmissions(model.ProblemId, userId);
+                double minDifference = codeCompareer.GetMinCodeDifference(model.Code, otherUsersSubmissions);
+
                 if (problemSubmissionDto.AllowedMinCodeDifferenceInPercentage > 0 && problemSubmissionDto.SubmissionType == SubmissionType.PlainCode)
-                {
-                    IEnumerable<string> otherUsersSubmissions = submissionService.GetProblemSubmissions(model.ProblemId, userId);
-                    double minDifference = codeCompareer.GetMinCodeDifference(model.Code, otherUsersSubmissions);
+                {                    
                     if (minDifference <= problemSubmissionDto.AllowedMinCodeDifferenceInPercentage)
                     {
                         return BadRequest(ErrorMessages.SimilarSubmission);
                     }
                 }
+
                 model.SubmissionContent = utilityService.GetCodeBytes(model.Code); 
                 //model.SubmissionContent = submissionCode.Content; 
                 submission = await submissionService.Create(model, userId);
