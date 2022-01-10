@@ -51,5 +51,6 @@ namespace JudgeSystem.Data.Models
         public string StartPlaceholder { get; set; }
 
         public string MethodPlaceholder { get; set; }
+
     }
 }

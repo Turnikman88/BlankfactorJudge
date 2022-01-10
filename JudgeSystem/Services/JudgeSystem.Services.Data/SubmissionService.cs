@@ -344,6 +344,15 @@ namespace JudgeSystem.Services.Data
             }
         }
 
+        public async Task AddSubmissionPoints(int id, double points)
+        {
+            Submission submission = await repository.GetByIdWithDeletedAsync(id);
+
+            submission.Similarity = points;
+
+            await repository.UpdateAsync(submission);
+        }
+
         private async Task SetCompilationErrors(Submission submission, string projectDirectory, ProcessResult processResult)
         {
             string errors = processResult.Output.Replace(projectDirectory, string.Empty);

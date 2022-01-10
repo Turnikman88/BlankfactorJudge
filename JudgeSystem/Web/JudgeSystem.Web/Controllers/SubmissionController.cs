@@ -171,6 +171,8 @@ namespace JudgeSystem.Web.Controllers
 
                 IEnumerable<string> otherUsersSubmissions = submissionService.GetProblemSubmissions(model.ProblemId, userId);
                 double minDifference = codeCompareer.GetMinCodeDifference(model.Code, otherUsersSubmissions);
+                await submissionService.AddSubmissionPoints(submission.Id, minDifference);
+                //await problemService.AddSimilarityPointsToProblem(model.ProblemId, minDifference);
 
                 if (problemSubmissionDto.AllowedMinCodeDifferenceInPercentage > 0 && problemSubmissionDto.SubmissionType == SubmissionType.PlainCode)
                 {                    

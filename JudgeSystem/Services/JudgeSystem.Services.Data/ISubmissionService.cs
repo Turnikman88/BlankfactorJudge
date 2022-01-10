@@ -41,5 +41,7 @@ namespace JudgeSystem.Services.Data
         Task RunAutomatedTests(int id, ProgrammingLanguage programmingLanguage);
 
         IEnumerable<string> GetProblemSubmissions(int problemId, string userId);
+
+        Task AddSubmissionPoints(int id, double points);
     }
 }

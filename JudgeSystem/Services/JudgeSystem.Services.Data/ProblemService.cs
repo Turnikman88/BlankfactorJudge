@@ -130,6 +130,6 @@ namespace JudgeSystem.Services.Data
             await problemRepository.All()
             .Where(p => p.Id == id)
             .Select(p => p.AutomatedTestingProject)
-            .FirstOrDefaultAsync();
+            .FirstOrDefaultAsync();        
     }
 }

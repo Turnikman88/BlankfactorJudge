@@ -33,9 +33,13 @@ namespace JudgeSystem.Data.Models
 
         public DateTime SubmisionDate { get; set; }
 
-		public string UserId { get; set; }
+        public string UserId { get; set; }
+
 		public ApplicationUser User { get; set; }
 
-		public ICollection<ExecutedTest> ExecutedTests { get; set; }
+        public double Similarity { get; set; }
+
+
+        public ICollection<ExecutedTest> ExecutedTests { get; set; }
 	}
 }
