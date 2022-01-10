@@ -2,7 +2,9 @@
 {
     public static class ErrorMessages
 	{
-        public const string PlaceholderMissingMessage = "Dont't remove the placeholders!";
+        public const string PlaceholderModifiedMessage = "Dont't remove or modify the placeholders!";
+
+        public const string PlaceholderMovedMessage = "Placeholders must be in the end of the scope!";
 
         public const string NotFoundEntityMessage = "The required {0} was not found!";
 

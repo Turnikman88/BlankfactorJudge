@@ -29,5 +29,7 @@ namespace JudgeSystem.Services
         string GetJavaClassName(string sourceCode);
 
         string GetJavaMainClass(IEnumerable<string> sourceCodes);
+
+        byte[] GetCodeBytes(string code);
     }
 }

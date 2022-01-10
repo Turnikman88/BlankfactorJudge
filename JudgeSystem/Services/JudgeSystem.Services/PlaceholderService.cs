@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace JudgeSystem.Services
 {
@@ -15,9 +16,22 @@ namespace JudgeSystem.Services
 
             return modifiedCode;
         }
-        public bool IsPlaceholderMissing(string code)
+        public string GetPlacholderErrorMessage(string code)
         {
-            return !(code.Contains(GlobalConstants.StartPlaceholder) && code.Contains(GlobalConstants.MethodPlaceholder));
+            if (!(code.Contains(GlobalConstants.StartPlaceholder) && code.Contains(GlobalConstants.MethodPlaceholder)))
+            {
+                return ErrorMessages.PlaceholderModifiedMessage;
+            }
+
+            var reg = new Regex(@"[\t\n\r\s+]");
+            string temp = reg.Replace(code, "");
+
+            if (!(temp.Contains(GlobalConstants.StartPlaceholder + "}") && temp.Contains(GlobalConstants.MethodPlaceholder + "}")))
+            {
+                return ErrorMessages.PlaceholderMovedMessage;
+            }
+
+            return null;
         }
     }
 }

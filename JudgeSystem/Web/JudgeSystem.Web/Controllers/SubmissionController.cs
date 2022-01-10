@@ -108,6 +108,8 @@ namespace JudgeSystem.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(SubmissionInputModel model)
         {
+            string placeholderCode = null;
+
             if (model.ContestId.HasValue && !contestService.IsActive(model.ContestId.Value))
             {
                 return BadRequest(ErrorMessages.ContestIsNotActive);
@@ -125,12 +127,13 @@ namespace JudgeSystem.Web.Controllers
             int timeIntervalBetweenSubmissionInSeconds = problemSubmissionDto.TimeIntervalBetweenSubmissionInSeconds;
             if (problemSubmissionDto.HasPlaceholder)
             {
-                if (placeholderService.IsPlaceholderMissing(model.Code))
+                string errMessage = placeholderService.GetPlacholderErrorMessage(model.Code);
+                if (errMessage != null)
                 {
-                    return BadRequest(ErrorMessages.PlaceholderMissingMessage);
+                    return BadRequest(errMessage);
                 }
 
-                model.Code =  placeholderService.ReplacePlaceholders(model.Code, problemSubmissionDto.StartPlaceholder,
+                placeholderCode =  placeholderService.ReplacePlaceholders(model.Code, problemSubmissionDto.StartPlaceholder,
                     problemSubmissionDto.MethodPlaceholder);
             }
             if (timeIntervalBetweenSubmissionInSeconds >= GlobalConstants.DefaultTimeIntervalBetweenSubmissionInSeconds)
@@ -162,8 +165,9 @@ namespace JudgeSystem.Web.Controllers
             }
             else
             {
-                //ToDo: create method here to replace placeholder
-                SubmissionCodeDto submissionCode = await utilityService.ExtractSubmissionCode(model.Code, model.File, model.ProgrammingLanguage);
+                string codeToExecute = placeholderCode == null ? model.Code : placeholderCode;
+
+                SubmissionCodeDto submissionCode = await utilityService.ExtractSubmissionCode(codeToExecute, model.File, model.ProgrammingLanguage);
                 if (problemSubmissionDto.AllowedMinCodeDifferenceInPercentage > 0 && problemSubmissionDto.SubmissionType == SubmissionType.PlainCode)
                 {
                     IEnumerable<string> otherUsersSubmissions = submissionService.GetProblemSubmissions(model.ProblemId, userId);
@@ -173,8 +177,10 @@ namespace JudgeSystem.Web.Controllers
                         return BadRequest(ErrorMessages.SimilarSubmission);
                     }
                 }
-                model.SubmissionContent = submissionCode.Content;
+                model.SubmissionContent = utilityService.GetCodeBytes(model.Code); 
+                //model.SubmissionContent = submissionCode.Content; 
                 submission = await submissionService.Create(model, userId);
+
                 await submissionService.ExecuteSubmission(submission.Id, submissionCode.SourceCodes, model.ProgrammingLanguage);
             }
 

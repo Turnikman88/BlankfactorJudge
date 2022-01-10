@@ -142,6 +142,11 @@ namespace JudgeSystem.Services
             return files;
         }
 
+        public byte[] GetCodeBytes(string code)
+        {
+            return Encoding.UTF8.GetBytes(code);
+        }
+
         private async Task<SubmissionCodeDto> ExtractSubmissionCodeDtoFromSubmissionFile(IFormFile submissionFile, ProgrammingLanguage programmingLanguage)
         {
             if (ConvertBytesToKiloBytes(submissionFile.Length) > GlobalConstants.SubmissionFileMaxSizeInKb)

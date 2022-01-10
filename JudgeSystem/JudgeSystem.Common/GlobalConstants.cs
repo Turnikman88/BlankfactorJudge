@@ -97,9 +97,9 @@ namespace JudgeSystem.Common
         #endregion
 
         #region Placeholder constants
-        public const string StartPlaceholder = "///RenderStart///";
+        public const string StartPlaceholder = "//#/RenderStart/#//";
         public const string StartPlaceholderDisplayName = "Start Placeholder";
-        public const string MethodPlaceholder = "///RenderJudge///";
+        public const string MethodPlaceholder = "//#/RenderJudge/#//";
         public const string MethodPlaceholderDisplayName = "Method Placeholder";
         public const string HasPlaceholderDisplayName = "Has Placeholder";
         public const string Usings = "";
