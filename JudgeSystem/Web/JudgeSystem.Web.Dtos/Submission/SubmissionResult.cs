@@ -27,5 +27,7 @@ namespace JudgeSystem.Web.Dtos.Submission
 		public double TotalMemoryUsed { get; set; }
 
 		public double TotalTimeUsed { get; set; }
-	}
+
+        public double Similarity { get; set; }
+    }
 }

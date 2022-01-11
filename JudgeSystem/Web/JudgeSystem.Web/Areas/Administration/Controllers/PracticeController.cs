@@ -71,7 +71,7 @@ namespace JudgeSystem.Web.Areas.Administration.Controllers
                 UrlPlaceholder = baseUrl + $"{GlobalConstants.QueryStringDelimiter}{GlobalConstants.ProblemIdKey}=" + "{0}",
                 PaginationData = paginationData,
                 UserId = userId,
-                LessonName = lesson.Name
+                LessonName = lesson.Name,
             };
 
             return View(model);

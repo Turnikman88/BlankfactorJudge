@@ -8,6 +8,7 @@
                 <th scope="col">@Localizer["Points"]</th>
                 <th scope="col">@Localizer["Time and memory used"]</th>
                 <th scope="col">@Localizer["Submission Date"]</th>
+                <th scope="col">@Localizer["Similarity"]</th>
                 <th scope="col">@Localizer["More info"]</th>
             </tr>
         </thead>
@@ -53,6 +54,7 @@
                         <span class="d-block">@Localizer["Time"]: @submission.TotalTimeUsed.ToString("F3") s</span>
                     </td>
                     <td class="pt-4">@submission.SubmissionDate</td>
+                    <td class="pt-3">@submission.Similarity</td>
                     <td class="pt-3">
                         <a class="btn btn-dark"
                            target="_blank"

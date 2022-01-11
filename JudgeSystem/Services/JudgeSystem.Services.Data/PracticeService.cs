@@ -71,7 +71,9 @@ namespace JudgeSystem.Services.Data
                         Id = problem.Id,
                         Name = problem.Name,
                         IsExtraTask = problem.IsExtraTask,
-                        MaxPoints = problem.MaxPoints
+                        //MaxPoints = problem.Submissions.Where(x => x.ProblemId == ),
+                        MaxPoints = problem.MaxPoints,
+                       
                     })
                     .ToList(),
                     PracticeResults = practice.UserPractices
@@ -86,14 +88,14 @@ namespace JudgeSystem.Services.Data
                         .ToDictionary(problemBySubmissions => 
                             problemBySubmissions.Key, 
                             submissions => submissions.Max(s => s.ActualPoints))
-                    })
+                    })                    
                     .OrderByDescending(cr => cr.Total)
                     .ThenBy(cr => cr.Username)
                     .GetPage(page, entitesPerPage)
                     .ToList(),
                 })
                 .FirstOrDefault();
-
+            
             Validator.ThrowEntityNotFoundExceptionIfEntityIsNull(model, nameof(Contest));
 
             return model;

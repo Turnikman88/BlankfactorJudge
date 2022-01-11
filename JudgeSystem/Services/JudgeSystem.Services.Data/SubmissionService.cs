@@ -353,6 +353,15 @@ namespace JudgeSystem.Services.Data
             await repository.UpdateAsync(submission);
         }
 
+/*        public async Task GetSubmissionPoints(int id, double points)
+        {
+            Submission submission = await repository.GetByIdWithDeletedAsync(id);
+
+            submission.Similarity = points;
+
+            await repository.UpdateAsync(submission);
+        }*/
+
         private async Task SetCompilationErrors(Submission submission, string projectDirectory, ProcessResult processResult)
         {
             string errors = processResult.Output.Replace(projectDirectory, string.Empty);
@@ -390,7 +399,8 @@ namespace JudgeSystem.Services.Data
                 SubmissionDate = submission.SubmisionDate.ToString(GlobalConstants.StandardDateFormat, CultureInfo.InvariantCulture),
                 Id = submission.Id,
                 TotalMemoryUsed = submission.ExecutedTests.Sum(t => t.MemoryUsed),
-                TotalTimeUsed = submission.ExecutedTests.Sum(t => t.TimeUsed)
+                TotalTimeUsed = submission.ExecutedTests.Sum(t => t.TimeUsed),
+                Similarity = submission.Similarity                
             };
 
             return submissionResult;

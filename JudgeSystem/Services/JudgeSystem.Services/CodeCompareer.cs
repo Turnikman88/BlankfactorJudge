@@ -7,7 +7,7 @@ namespace JudgeSystem.Services
     {
         public double GetMinCodeDifference(string sourceCode, IEnumerable<string> otherCodes)
         {
-            double minCodeDistance = double.MaxValue;
+            double minCodeDistance = 100;
             string minifiedSourceCode = MinifyString(sourceCode);
 
             foreach (string otherCode in otherCodes)
@@ -20,7 +20,7 @@ namespace JudgeSystem.Services
                 }
             }
 
-            return minCodeDistance;
+            return 100 - Math.Round(minCodeDistance, 2);
         }
 
         private double GetStringDistanceInPercentages(string sourceString, string otherString)
