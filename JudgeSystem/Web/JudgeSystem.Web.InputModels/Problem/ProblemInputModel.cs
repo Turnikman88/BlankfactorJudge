@@ -66,5 +66,12 @@ namespace JudgeSystem.Web.InputModels.Problem
         [Display(Name = MethodPlaceholderDisplayName)]
         [StringLength(30000, MinimumLength = 10)]
         public string MethodPlaceholder { get; set; }
+
+        public bool IsSqlTask { get; set; }
+
+        [StringLength(200, MinimumLength = 5)]
+        [Display(Name = SqlProcedureDisplayName)]
+
+        public string SqlProcedureName { get; set; }
     }
 }

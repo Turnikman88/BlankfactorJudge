@@ -1,6 +1,6 @@
-﻿function TogglePlaceholder() {
+﻿function Toggle(id) {
 
-    var elements = document.getElementsByClassName("placeholder-elements");
+    var elements = document.getElementsByClassName(id);
     for (const x of elements) {
         if (x.style.display === "none") {
             x.style.display = "block";

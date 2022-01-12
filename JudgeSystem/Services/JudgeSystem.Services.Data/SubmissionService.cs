@@ -41,6 +41,7 @@ namespace JudgeSystem.Services.Data
         private readonly IExecutorFactory executorFactory;
         private readonly IChecker checker;
         private readonly IProcessRunner processRunner;
+       // private readonly ISqlConnectorService sqlConnectorService;
 
         public SubmissionService(
             IDeletableEntityRepository<Submission> repository,
@@ -53,7 +54,7 @@ namespace JudgeSystem.Services.Data
             ICompilerFactory compilerFactory,
             IExecutorFactory executorFactory,
             IChecker checker,
-            IProcessRunner processRunner)
+            IProcessRunner processRunner/*, ISqlConnectorService sqlConnectorService*/)
         {
             this.repository = repository;
             this.estimator = estimator;
@@ -66,6 +67,7 @@ namespace JudgeSystem.Services.Data
             this.executorFactory = executorFactory;
             this.checker = checker;
             this.processRunner = processRunner;
+            //this.sqlConnectorService = sqlConnectorService;
         }
 
         public async Task<SubmissionDto> Create(SubmissionInputModel model, string userId)
@@ -201,7 +203,7 @@ namespace JudgeSystem.Services.Data
             return problemName;
         }
 
-        public IEnumerable<string> GetProblemSubmissions(int problemId, string userId) => 
+        public IEnumerable<string> GetProblemSubmissions(int problemId, string userId) =>
             repository.All()
                 .Where(s => s.ProblemId == problemId && s.UserId != userId && s.CompilationErrors == null && s.ExecutedTests.Count > 0)
                 .Select(s => Encoding.UTF8.GetString(s.Code))
@@ -221,51 +223,59 @@ namespace JudgeSystem.Services.Data
             Submission submission = await repository.FindAsync(submissionId);
             var sourceCodes = codeFiles.Select(x => x.Code).ToList();
             string fileName = codeFiles.First().Name;
-            if (programmingLanguage == ProgrammingLanguage.Java)
+            if (programmingLanguage == ProgrammingLanguage.SQL)
             {
-                fileName = GetJavaFileName(sourceCodes);
-                if (codeFiles.Count == 1)
-                {
-                    codeFiles.First().Name = fileName;
-                }
+                //sqlConnectorService.Execute(sourceCodes.First());
             }
-
-            string workingDirectory = $"{GlobalConstants.CompilationDirectoryPath}{Path.GetRandomFileName()}/";
-            Directory.CreateDirectory(workingDirectory);
-
-            //Created directory above will be deleted even if some of the code below throws exception beacuse we use finally block
-            try
+            else
             {
-                ICompiler compiler = compilerFactory.CreateCompiler(programmingLanguage);
-                CompileResult compileResult;
 
-                if (programmingLanguage != ProgrammingLanguage.CSharp)
+                if (programmingLanguage == ProgrammingLanguage.Java)
                 {
-                    utilityService.CreateLanguageSpecificFiles(programmingLanguage, codeFiles, workingDirectory);
-                    compileResult = compiler.Compile(fileName, workingDirectory);
-                }
-                else
-                {
-                    compileResult = compiler.Compile(fileName, workingDirectory, sourceCodes);
+                    fileName = GetJavaFileName(sourceCodes);
+                    if (codeFiles.Count == 1)
+                    {
+                        codeFiles.First().Name = fileName;
+                    }
                 }
 
-                if (!compileResult.IsCompiledSuccessfully)
+                string workingDirectory = $"{GlobalConstants.CompilationDirectoryPath}{Path.GetRandomFileName()}/";
+                Directory.CreateDirectory(workingDirectory);
+
+                //Created directory above will be deleted even if some of the code below throws exception beacuse we use finally block
+                try
                 {
-                    submission.CompilationErrors = Encoding.UTF8.GetBytes(compileResult.Errors);
-                    await Update(submission);
+                    ICompiler compiler = compilerFactory.CreateCompiler(programmingLanguage);
+                    CompileResult compileResult;
+
+                    if (programmingLanguage != ProgrammingLanguage.CSharp)
+                    {
+                        utilityService.CreateLanguageSpecificFiles(programmingLanguage, codeFiles, workingDirectory);
+                        compileResult = compiler.Compile(fileName, workingDirectory);
+                    }
+                    else
+                    {
+                        compileResult = compiler.Compile(fileName, workingDirectory, sourceCodes);
+                    }
+
+                    if (!compileResult.IsCompiledSuccessfully)
+                    {
+                        submission.CompilationErrors = Encoding.UTF8.GetBytes(compileResult.Errors);
+                        await Update(submission);
+                    }
+                    else
+                    {
+                        await RunTests(submission, compileResult, programmingLanguage);
+                    }
                 }
-                else
+                catch
                 {
-                    await RunTests(submission, compileResult, programmingLanguage);
+                    throw;
                 }
-            }
-            catch
-            {
-                throw;
-            }
-            finally
-            {
-                fileSystem.DeleteDirectory(workingDirectory);
+                finally
+                {
+                    fileSystem.DeleteDirectory(workingDirectory);
+                }
             }
         }
 
@@ -353,15 +363,6 @@ namespace JudgeSystem.Services.Data
             await repository.UpdateAsync(submission);
         }
 
-/*        public async Task GetSubmissionPoints(int id, double points)
-        {
-            Submission submission = await repository.GetByIdWithDeletedAsync(id);
-
-            submission.Similarity = points;
-
-            await repository.UpdateAsync(submission);
-        }*/
-
         private async Task SetCompilationErrors(Submission submission, string projectDirectory, ProcessResult processResult)
         {
             string errors = processResult.Output.Replace(projectDirectory, string.Empty);
@@ -400,7 +401,7 @@ namespace JudgeSystem.Services.Data
                 Id = submission.Id,
                 TotalMemoryUsed = submission.ExecutedTests.Sum(t => t.MemoryUsed),
                 TotalTimeUsed = submission.ExecutedTests.Sum(t => t.TimeUsed),
-                Similarity = submission.Similarity                
+                Similarity = submission.Similarity
             };
 
             return submissionResult;

@@ -297,6 +297,9 @@
     <data name="Has Placeholder" xml:space="preserve">
     <value>Има плейсхолдър</value>
   </data>
+    <data name="Is Sql Task" xml:space="preserve">
+    <value>Sql задача</value>
+  </data>
   <data name="First name" xml:space="preserve">
     <value>Собствено име</value>
   </data>

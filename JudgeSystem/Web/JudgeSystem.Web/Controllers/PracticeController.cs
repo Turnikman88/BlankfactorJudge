@@ -24,7 +24,7 @@ namespace JudgeSystem.Web.Controllers
         private readonly IExcelFileGenerator excelFileGenerator;
 
         public PracticeController(
-            IPracticeService practiceService, 
+            IPracticeService practiceService,
             IExcelFileGenerator excelFileGenerator,
             IStringLocalizer<SharedResources> sharedLocalizer)
         {

@@ -105,6 +105,11 @@ namespace JudgeSystem.Common
         public const string Usings = "";
         #endregion
 
+        #region Sql constants
+        public const string SqlProcedureDisplayName = "Sql Procedure Name";
+
+        #endregion
+
         public static string ConsoleFile
         {
             get

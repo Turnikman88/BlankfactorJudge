@@ -18,6 +18,7 @@ namespace JudgeSystem.Compilers
                     return new CPlusPlusCompiler();
                 case ProgrammingLanguage.Java:
                     return new JavaCompiler();
+
                 default:
                     throw new ArgumentException(UnsupportedCompilerErrorMessage);
             }

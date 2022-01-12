@@ -25,6 +25,8 @@ namespace JudgeSystem.Data.Models
 
         public bool HasPlaceholder { get; set; }
 
+        public bool IsSqlTask { get; set; }
+
         public int MaxPoints { get; set; }
 
         public int AllowedTimeInMilliseconds { get; set; }
@@ -51,6 +53,8 @@ namespace JudgeSystem.Data.Models
         public string StartPlaceholder { get; set; }
 
         public string MethodPlaceholder { get; set; }
+
+        public string SqlProcedureName { get; set; }
 
     }
 }

@@ -58,6 +58,9 @@ namespace JudgeSystem.Web.Utilites
                     case ProgrammingLanguage.CPlusPlus:
                         item.Text = "C++ code";
                         break;
+                    case ProgrammingLanguage.SQL:
+                        item.Text = "SQL code";
+                        break;
                 }
 
                 yield return item;

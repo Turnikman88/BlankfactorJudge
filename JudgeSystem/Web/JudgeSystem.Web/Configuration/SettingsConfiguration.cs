@@ -15,6 +15,7 @@ namespace JudgeSystem.Web.Configuration
 
             services.Configure<DefaultUserPasswordSettings>(configuration.GetSection("DefaultUserPassword"));
 
+            services.Configure<TestBaseConnectionSettings>(configuration.GetSection("TestBaseConnection"));
 
             PopulateCompilationSettings(configuration);
 
