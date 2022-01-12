@@ -12,5 +12,7 @@ namespace JudgeSystem.Web.Dtos.Problem
         public bool IsSqlTask { get; set; }
 
         public List<string> SqlCodeItem { get; set; }
+
+        public List<string> ProgLangItem { get; set; }
     }
 }

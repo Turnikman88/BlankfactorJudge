@@ -8,7 +8,7 @@
     ProblemViewModel firstProblem = Model.Problems.FirstOrDefault();
     string administrationArea = GlobalConstants.AdministrationArea;
     //var a = firstProblem?.IsSqlTask;
-    IEnumerable<SelectListItem> programmingLangueages = Utility.GetSelectListOfProgrammingLangugages();
+    List<string> programmingLangueages = Utility.GetSelectListOfProgrammingLangugages();
 }
 
 <h2 class="text-secondary text-center">@Model.Name</h2>
@@ -153,7 +153,12 @@ else
                 }
             </div>
             <div class="w-25 form-group mt-4" id="programmingLanguage">
-                <select id="programmingLanguage-select" class="form-control" asp-items="programmingLangueages"></select>
+                <select id="programmingLanguage-select" class="form-control">
+                    @*@for (int i = 0; i < programmingLangueages.Count; i++)
+                    {
+                        <option value="@programmingLangueages[i]">@programmingLangueages[i]</option>
+                    }*@
+                </select>
             </div>
         </div>
 

@@ -309,15 +309,24 @@ function changeProblemSubmissions(id) {
         .then(problem => {
             $(".allowed-time").text(problem.allowedTimeInMilliseconds);
             $(".allowed-memory").text(problem.allowedMemoryInMegaBytes.toFixed(2));
-
+            var selectobject = document.getElementById("programmingLanguage-select");
+            var len = selectobject.length;
             if (problem.isSqlTask) {
 
-               /* $("#programmingLanguage-select").remove(0);
-                $("#programmingLanguage-select").remove(1);
-                $("#programmingLanguage-select").remove(2);*/
+                for (var i = 0; i < len; i++) {
+                    selectobject.remove(0);
+                }
 
                 for (var i = 0; i < problem.sqlCodeItem.length; i++) {
                     $("#programmingLanguage-select").append(`<option value="${problem.sqlCodeItem[i]}">${problem.sqlCodeItem[i]}</option>`);
+                }
+            } else {
+                for (var i = 0; i < len; i++) {
+                    selectobject.remove(0);
+                }
+
+                for (var i = 0; i < problem.progLangItem.length; i++) {
+                    $("#programmingLanguage-select").append(`<option value="${problem.progLangItem[i]}">${problem.progLangItem[i]}</option>`);
                 }
             }
         })

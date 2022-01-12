@@ -41,30 +41,29 @@ namespace JudgeSystem.Web.Utilites
             return items;
         }
 
-        public static IEnumerable<SelectListItem> GetSelectListOfProgrammingLangugages()
+        public static List<string> GetSelectListOfProgrammingLangugages()
         {
+            var items = new List<string>();
+
             foreach (object programmingLanguageObject in Enum.GetValues(typeof(ProgrammingLanguage)))
             {
                 var programmingLanguage = (ProgrammingLanguage)programmingLanguageObject;
-                var item = new SelectListItem() { Value = programmingLanguage.ToString() };
                 switch (programmingLanguage)
                 {
                     case ProgrammingLanguage.CSharp:
-                        item.Text = "C# code";
-                        yield return item;
+                        items.Add("C# code");
                         break;
 
                     case ProgrammingLanguage.Java:
-                        item.Text = "Java code";
-                        yield return item;
+                        items.Add("Java code");
                         break;
 
                     case ProgrammingLanguage.CPlusPlus:
-                        item.Text = "C++ code";
-                        yield return item;
+                        items.Add("C++ code");
                         break;
                 }
             }
+            return items;
         }
 
         public static List<string> GetSelectListOfDbLangugages()

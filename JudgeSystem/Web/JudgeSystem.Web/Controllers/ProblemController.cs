@@ -27,6 +27,10 @@ namespace JudgeSystem.Web.Controllers
             {
                 problem.SqlCodeItem = Utility.GetSelectListOfDbLangugages();
             }
+            else
+            {
+                problem.ProgLangItem = Utility.GetSelectListOfProgrammingLangugages();
+            }
 
             return Ok(problem);
         }
