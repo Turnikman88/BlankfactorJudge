@@ -54,7 +54,7 @@ namespace JudgeSystem.Data.Models
 
         public string MethodPlaceholder { get; set; }
 
-        public string SqlProcedureName { get; set; }
+        //public string SqlProcedureName { get; set; }
 
     }
 }

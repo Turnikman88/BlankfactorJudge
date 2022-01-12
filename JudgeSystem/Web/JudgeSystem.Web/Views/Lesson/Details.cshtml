@@ -7,6 +7,7 @@
     int problemNumber = 0;
     ProblemViewModel firstProblem = Model.Problems.FirstOrDefault();
     string administrationArea = GlobalConstants.AdministrationArea;
+    //var a = firstProblem?.IsSqlTask;
     IEnumerable<SelectListItem> programmingLangueages = Utility.GetSelectListOfProgrammingLangugages();
 }
 
@@ -72,6 +73,7 @@ else
                     {
                         <span class="text-success ml-2 font-size-10"><i class="fas fa-star"></i></span>
                     }
+                    
                 </li>
             }
             @if (User.IsInRole(GlobalConstants.AdministratorRoleName))
@@ -151,7 +153,7 @@ else
                 }
             </div>
             <div class="w-25 form-group mt-4" id="programmingLanguage">
-                <select class="form-control" asp-items="programmingLangueages"></select>
+                <select id="programmingLanguage-select" class="form-control" asp-items="programmingLangueages"></select>
             </div>
         </div>
 

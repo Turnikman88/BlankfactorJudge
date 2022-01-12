@@ -223,7 +223,7 @@ namespace JudgeSystem.Services.Data
             Submission submission = await repository.FindAsync(submissionId);
             var sourceCodes = codeFiles.Select(x => x.Code).ToList();
             string fileName = codeFiles.First().Name;
-            if (programmingLanguage == ProgrammingLanguage.SQL)
+            if (programmingLanguage == ProgrammingLanguage.MsSQL)
             {
                 SqlWorkerResult result = sqlConnectorService.Check(sourceCodes.First());
 

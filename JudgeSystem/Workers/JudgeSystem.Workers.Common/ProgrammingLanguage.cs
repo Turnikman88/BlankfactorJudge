@@ -5,6 +5,6 @@
         CSharp = 1, 
         Java = 2,
         CPlusPlus = 3,
-        SQL = 4
+        MsSQL = 4
     }
 }

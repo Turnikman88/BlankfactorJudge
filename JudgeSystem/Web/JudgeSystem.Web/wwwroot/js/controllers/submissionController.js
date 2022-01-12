@@ -11,45 +11,47 @@ window.onload = () => {
 
     let hash = window.location.hash;
 
-	let currentElement = $(`li.problem-name:contains(${decodeURI(hash).substr(1)})`)[0];
-	if (currentElement) {
-		$(".problem-name").removeClass("active-problem");
+    let currentElement = $(`li.problem-name:contains(${decodeURI(hash).substr(1)})`)[0];
+    if (currentElement) {
+        $(".problem-name").removeClass("active-problem");
         $(currentElement).addClass("active-problem");
         let submissionType = currentElement.dataset.type.toString();
         hideOneOfCodeInputs(submissionType);
-	}
-	else {
-		$('li.problemName')[0].classList.add('active-problem');
-	}
+    }
+    else {
+        $('li.problemName')[0].classList.add('active-problem');
+    }
 
-	$(".active-problem").click();
+    $(".active-problem").click();
 
-	let problemId = $('.active-problem')[0].dataset.id;
-	genratePaginationPages(problemId);
+    let problemId = $('.active-problem')[0].dataset.id;
+    genratePaginationPages(problemId);
 };
 
 $(".problem-name").on("click", (e) => {
 
-	let oldId = $(".active-problem")[0].dataset.id;
-	$(".active-problem").removeClass("active-problem");
+    let oldId = $(".active-problem")[0].dataset.id;
+    $(".active-problem").removeClass("active-problem");
     $(e.target).addClass("active-problem");
 
     let submissionType = e.target.dataset.type.toString();
     hideOneOfCodeInputs(submissionType);
 
-	window.location.hash = e.target.textContent;
+    window.location.hash = e.target.textContent;
 
-	let id = $(e.target)[0].dataset.id;
+    let id = $(e.target)[0].dataset.id;
 
-	//If we refresh the id and oldId will be get from the same elemnt and in this case the oldId 
-	//must be set to the id of the first li with class problem- name
-	if (id === oldId) {
-		oldId = $('li.problem-name')[0].dataset.id;
-	}
+    //If we refresh the id and oldId will be get from the same elemnt and in this case the oldId 
+    //must be set to the id of the first li with class problem- name
+    if (id === oldId) {
+        oldId = $('li.problem-name')[0].dataset.id;
+    }
 
-	$('#problemName')[0].innerText = e.target.textContent;
+    $('#problemName')[0].innerText = e.target.textContent;
 
     changeProblemConstraints(id);
+
+    changeProblemSubmissions(id);
 
     if ($('#admin-buttons').length > 0) {
         let oldIdHref = `/${oldId}`;
@@ -62,11 +64,11 @@ $(".problem-name").on("click", (e) => {
         replaceHref('addTestsBtn', oldValue, newValue);
         replaceHref('addTestBtn', oldValue, newValue);
         replaceHref('allTestsBtn', oldValue, newValue);
-	}
-	
-	let page = 1;
-	genratePaginationPages(id);
-	getSubmissions(id, page);
+    }
+
+    let page = 1;
+    genratePaginationPages(id);
+    getSubmissions(id, page);
 
 });
 
@@ -78,7 +80,7 @@ function replaceHref(elemnetId, oldValue, newValue) {
 }
 
 $('#submit-btn').on('click', () => {
-	let problemId = $('.active-problem')[0].dataset.id;
+    let problemId = $('.active-problem')[0].dataset.id;
     let submissionType = $('.active-problem')[0].dataset.type;
     let contestId = $('#submit-btn')[0].dataset.contestid;
     let practiceId = $('#submit-btn')[0].dataset.practiceid;
@@ -103,15 +105,15 @@ $('#submit-btn').on('click', () => {
         formData.append('practiceId', practiceId);
     }
 
-	let tr = $('<tr></tr>');
-	let pointsTd = $('<td></td>');
-	let spinner = $('<div class="spinner-border text-success" role="status"></div>');
-	pointsTd.append(spinner);
+    let tr = $('<tr></tr>');
+    let pointsTd = $('<td></td>');
+    let spinner = $('<div class="spinner-border text-success" role="status"></div>');
+    pointsTd.append(spinner);
     tr.append(pointsTd);
 
-	let tbody = $('#submissions-holder tbody');
-	tbody.prepend(tr);
-	editor.setValue("");
+    let tbody = $('#submissions-holder tbody');
+    tbody.prepend(tr);
+    editor.setValue("");
 
     $.ajax({
         url: '/Submission/Create',
@@ -121,56 +123,56 @@ $('#submit-btn').on('click', () => {
         processData: false
     })
         .done((response) => {
-			$('#submissions-holder tbody tr:first-of-type').remove();
-			let tr = generateTr(response);
-			tbody.prepend(tr);
+            $('#submissions-holder tbody tr:first-of-type').remove();
+            let tr = generateTr(response);
+            tbody.prepend(tr);
 
-			let subbmissions = $('#submissions-holder > table > tbody > tr');
-			if (subbmissions.length > submissiosPerPage) {
-				for (let i = submissiosPerPage; i < subbmissions.length; i++) {
-					subbmissions[i].remove();
-				}
-			}
+            let subbmissions = $('#submissions-holder > table > tbody > tr');
+            if (subbmissions.length > submissiosPerPage) {
+                for (let i = submissiosPerPage; i < subbmissions.length; i++) {
+                    subbmissions[i].remove();
+                }
+            }
 
-			let currentPagesCount = $('.page-number').length;
-			let problemId = $('.active-problem')[0].dataset.id;
+            let currentPagesCount = $('.page-number').length;
+            let problemId = $('.active-problem')[0].dataset.id;
 
-			$.get(`/Submission/GetSubmissionsCount?problemId=${problemId}&contestId=${contestId}`)
-				.done(submissionCount => {
-					let pagesCount = Math.ceil(submissionCount / submissiosPerPage);
-					if (pagesCount > currentPagesCount) {
-						let nextButton = $('.pagination li:last-of-type');
-						let newLi = $(`<li class="page-item page-number"><a class="page-link" href="#">${currentPagesCount + 1}</a></li>`);
-						newLi.insertBefore(nextButton);
+            $.get(`/Submission/GetSubmissionsCount?problemId=${problemId}&contestId=${contestId}`)
+                .done(submissionCount => {
+                    let pagesCount = Math.ceil(submissionCount / submissiosPerPage);
+                    if (pagesCount > currentPagesCount) {
+                        let nextButton = $('.pagination li:last-of-type');
+                        let newLi = $(`<li class="page-item page-number"><a class="page-link" href="#">${currentPagesCount + 1}</a></li>`);
+                        newLi.insertBefore(nextButton);
 
-						$(newLi.children()[0]).on('click', (e) => {
-							$("html, body").animate({ scrollTop: $(document).height() }, "slow");
-							let page = e.target.innerText;
-							let problemId = $('.active-problem')[0].dataset.id;
-							getSubmissions(problemId, page);
-						});
-					}
-				})
-				.fail((error) => {
+                        $(newLi.children()[0]).on('click', (e) => {
+                            $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+                            let page = e.target.innerText;
+                            let problemId = $('.active-problem')[0].dataset.id;
+                            getSubmissions(problemId, page);
+                        });
+                    }
+                })
+                .fail((error) => {
                     showError(error.responseText);
                     hideLoader();
-				});
-		})
-		.fail((error) => {
+                });
+        })
+        .fail((error) => {
             showError(error.responseText);
             hideLoader();
-		});
+        });
 });
 
 function genratePaginationPages(problemId) {
-	let contestId = $('#submit-btn')[0].dataset.contestid;
-	
+    let contestId = $('#submit-btn')[0].dataset.contestid;
+
     $.get(`/Submission/GetSubmissionsCount?problemId=${problemId}&contestId=${contestId}`)
-		.done(submissionCount => {
-			let pagesCount = Math.ceil(submissionCount / submissiosPerPage);
-			if (pagesCount < 1) {
-				pagesCount = 1;
-			}
+        .done(submissionCount => {
+            let pagesCount = Math.ceil(submissionCount / submissiosPerPage);
+            if (pagesCount < 1) {
+                pagesCount = 1;
+            }
             $('.pagination .page-number').remove();
             let nextButton = $('.pagination li:last-of-type');
             for (var i = 1; i <= pagesCount; i++) {
@@ -182,7 +184,7 @@ function genratePaginationPages(problemId) {
                 $("html, body").animate({ scrollTop: $(document).height() }, "slow");
                 let page = e.target.innerText;
                 let problemId = $('.active-problem')[0].dataset.id;
-               
+
                 getSubmissions(problemId, page);
             });
         })
@@ -192,90 +194,90 @@ function genratePaginationPages(problemId) {
 }
 
 function getSubmissions(id, page) {
-	let contestId = $('#submit-btn')[0].dataset.contestid;
-	$.get(`/Submission/GetProblemSubmissions?problemId=${id}&page=${page}&contestId=${contestId}`)
-		.done(response => {
-			let tbody = $('#submissions-holder tbody');
-			$('#submissions-holder tbody tr').remove();
-			for (let submission of response) {
-				let tr = generateTr(submission);
-				tbody.append(tr);
-			}
+    let contestId = $('#submit-btn')[0].dataset.contestid;
+    $.get(`/Submission/GetProblemSubmissions?problemId=${id}&page=${page}&contestId=${contestId}`)
+        .done(response => {
+            let tbody = $('#submissions-holder tbody');
+            $('#submissions-holder tbody tr').remove();
+            for (let submission of response) {
+                let tr = generateTr(submission);
+                tbody.append(tr);
+            }
 
-			$('.page-number > a').removeClass(currentPageClass);
-			$($('.page-number > a')[page - 1]).addClass(currentPageClass);
+            $('.page-number > a').removeClass(currentPageClass);
+            $($('.page-number > a')[page - 1]).addClass(currentPageClass);
 
-		})
+        })
         .fail(error => {
             showError(error.responseText);
-		});
+        });
 }
 
 function generateTr(submission) {
-	let tr = $('<tr></tr>');
-	let pointsTd = $('<td class="pt-4"></td>');
-	let executionInfo = $('<td></td>');
-	executionInfo.append(`<span class="d-block">Memory: ${submission.totalMemoryUsed.toFixed(3)} MB</span>`);
-	executionInfo.append(`<span class="d-block">Time: ${submission.totalTimeUsed.toFixed(3)} ms</span>`);
-	let submissionDateTd = $(`<td class="pt-4">${submission.submissionDate}</td>`);
-	let detailsBtn = $(`<a href="/Submission/Details?id=${submission.id}" class="btn btn-success" target="_blank">Details</a>`);
-	if (!submission.isCompiledSuccessfully) {
-		pointsTd.text("Compile time error");
-	}
-	else {
-		for (let test of submission.executedTests) {
-			if (test.isCorrect && test.executionResultType === "Success") {
-				pointsTd.append('<i class="fas fa-check text-success"></i>');
-			}
-			else if (test.executionResultType === "RunTimeError") {
-				pointsTd.append('<i class="fas fa-bomb text-danger"></i>');
-			}
-			else if (test.executionResultType === "MemoryLimit") {
-				pointsTd.append('<i class="fas fa-memory text-danger"></i>');
-			}
-			else if (test.executionResultType === "TimeLimit") {
-				pointsTd.append('<i class="far fa-clock text-primary"></i>');
-			}
-			else {
-				pointsTd.append('<i class="fas fa-times text-danger"></i>');
-			}
-		}
+    let tr = $('<tr></tr>');
+    let pointsTd = $('<td class="pt-4"></td>');
+    let executionInfo = $('<td></td>');
+    executionInfo.append(`<span class="d-block">Memory: ${submission.totalMemoryUsed.toFixed(3)} MB</span>`);
+    executionInfo.append(`<span class="d-block">Time: ${submission.totalTimeUsed.toFixed(3)} ms</span>`);
+    let submissionDateTd = $(`<td class="pt-4">${submission.submissionDate}</td>`);
+    let detailsBtn = $(`<a href="/Submission/Details?id=${submission.id}" class="btn btn-success" target="_blank">Details</a>`);
+    if (!submission.isCompiledSuccessfully) {
+        pointsTd.text("Compile time error");
+    }
+    else {
+        for (let test of submission.executedTests) {
+            if (test.isCorrect && test.executionResultType === "Success") {
+                pointsTd.append('<i class="fas fa-check text-success"></i>');
+            }
+            else if (test.executionResultType === "RunTimeError") {
+                pointsTd.append('<i class="fas fa-bomb text-danger"></i>');
+            }
+            else if (test.executionResultType === "MemoryLimit") {
+                pointsTd.append('<i class="fas fa-memory text-danger"></i>');
+            }
+            else if (test.executionResultType === "TimeLimit") {
+                pointsTd.append('<i class="far fa-clock text-primary"></i>');
+            }
+            else {
+                pointsTd.append('<i class="fas fa-times text-danger"></i>');
+            }
+        }
 
-		pointsTd.append($(`<span class="ml-3">${submission.actualPoints}/${submission.maxPoints}</span>`));
-	}
-	tr.append(pointsTd);
-	tr.append(executionInfo);
-	tr.append(submissionDateTd);
-	tr.append($('<td class="pt-3">').append(detailsBtn));
-	return tr;
+        pointsTd.append($(`<span class="ml-3">${submission.actualPoints}/${submission.maxPoints}</span>`));
+    }
+    tr.append(pointsTd);
+    tr.append(executionInfo);
+    tr.append(submissionDateTd);
+    tr.append($('<td class="pt-3">').append(detailsBtn));
+    return tr;
 }
 
 $("#previous").on('click', () => {
-	$("html, body").animate({ scrollTop: $(document).height() }, "slow");
-	let currentPageNumber = $(`.${currentPageClass}`)[0].innerText;
-	let lastPage = $(".page-number").length;
-	let problemId = $('.active-problem')[0].dataset.id;
+    $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+    let currentPageNumber = $(`.${currentPageClass}`)[0].innerText;
+    let lastPage = $(".page-number").length;
+    let problemId = $('.active-problem')[0].dataset.id;
 
-	if (currentPageNumber == 1) {
-		getSubmissions(problemId, lastPage);
-	}
-	else {
-		getSubmissions(problemId, --currentPageNumber);
-	}
+    if (currentPageNumber == 1) {
+        getSubmissions(problemId, lastPage);
+    }
+    else {
+        getSubmissions(problemId, --currentPageNumber);
+    }
 });
 
 $("#next").on('click', () => {
-	$("html, body").animate({ scrollTop: $(document).height() }, "slow");
-	let currentPageNumber = $(`.${currentPageClass}`)[0].innerText;
-	let lastPage = $(".page-number").length;
-	let problemId = $('.active-problem')[0].dataset.id;
+    $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+    let currentPageNumber = $(`.${currentPageClass}`)[0].innerText;
+    let lastPage = $(".page-number").length;
+    let problemId = $('.active-problem')[0].dataset.id;
 
-	if (currentPageNumber == lastPage) {
-		getSubmissions(problemId, 1);
-	}
-	else {
-		getSubmissions(problemId, ++currentPageNumber);
-	}
+    if (currentPageNumber == lastPage) {
+        getSubmissions(problemId, 1);
+    }
+    else {
+        getSubmissions(problemId, ++currentPageNumber);
+    }
 });
 
 function hideOneOfCodeInputs(submissionType) {
@@ -298,6 +300,26 @@ function changeProblemConstraints(id) {
         .then(problem => {
             $(".allowed-time").text(problem.allowedTimeInMilliseconds);
             $(".allowed-memory").text(problem.allowedMemoryInMegaBytes.toFixed(2));
+        })
+        .catch(error => showError(error.responseText));
+}
+
+function changeProblemSubmissions(id) {
+    $.get("/Problem/Get/" + id)
+        .then(problem => {
+            $(".allowed-time").text(problem.allowedTimeInMilliseconds);
+            $(".allowed-memory").text(problem.allowedMemoryInMegaBytes.toFixed(2));
+
+            if (problem.isSqlTask) {
+
+               /* $("#programmingLanguage-select").remove(0);
+                $("#programmingLanguage-select").remove(1);
+                $("#programmingLanguage-select").remove(2);*/
+
+                for (var i = 0; i < problem.sqlCodeItem.length; i++) {
+                    $("#programmingLanguage-select").append(`<option value="${problem.sqlCodeItem[i]}">${problem.sqlCodeItem[i]}</option>`);
+                }
+            }
         })
         .catch(error => showError(error.responseText));
 }

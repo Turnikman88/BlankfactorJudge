@@ -377,6 +377,7 @@ namespace JudgeSystem.Services.Data.Tests
                 compilerFactory,
                 executorFactory,
                 checkerMock.Object,
+                null,
                 null);
 
             //Act
@@ -492,6 +493,7 @@ namespace JudgeSystem.Services.Data.Tests
                 compilerFactory,
                 executorFactory,
                 checkerMock.Object,
+                null,
                 null);
             return submissionService;
         }
@@ -530,7 +532,7 @@ namespace JudgeSystem.Services.Data.Tests
             await context.Submissions.AddRangeAsync(testData);
             await context.SaveChangesAsync();
             IDeletableEntityRepository<Submission> repository = new EfDeletableEntityRepository<Submission>(context);
-            var service = new SubmissionService(repository, estimator, null, null, null, null, null, null, null, null, null);
+            var service = new SubmissionService(repository, estimator, null, null, null, null, null, null, null, null, null, null);
             return service;
         }
 
@@ -538,7 +540,7 @@ namespace JudgeSystem.Services.Data.Tests
         {
             var reposotiryMock = new Mock<IDeletableEntityRepository<Submission>>();
             reposotiryMock.Setup(x => x.All()).Returns(testData);
-            return new SubmissionService(reposotiryMock.Object, estimator, null, null, null, null, null, null, null, null, null);
+            return new SubmissionService(reposotiryMock.Object, estimator, null, null, null, null, null, null, null, null, null, null);
         }
 
         private Submission GetSubmission()

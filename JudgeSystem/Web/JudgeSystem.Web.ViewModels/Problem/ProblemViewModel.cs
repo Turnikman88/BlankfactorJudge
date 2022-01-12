@@ -26,5 +26,7 @@ namespace JudgeSystem.Web.ViewModels.Problem
 
         [Display(Name = ModelConstants.ProblemSubmissionTypeDisplayName)]
         public SubmissionType SubmissionType { get; set; }
+
+       // public bool IsSqlTask { get; set; }
     }
 }

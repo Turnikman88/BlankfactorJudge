@@ -51,20 +51,37 @@ namespace JudgeSystem.Web.Utilites
                 {
                     case ProgrammingLanguage.CSharp:
                         item.Text = "C# code";
+                        yield return item;
                         break;
+
                     case ProgrammingLanguage.Java:
                         item.Text = "Java code";
+                        yield return item;
                         break;
+
                     case ProgrammingLanguage.CPlusPlus:
                         item.Text = "C++ code";
-                        break;
-                    case ProgrammingLanguage.SQL:
-                        item.Text = "SQL code";
+                        yield return item;
                         break;
                 }
-
-                yield return item;
             }
+        }
+
+        public static List<string> GetSelectListOfDbLangugages()
+        {
+            var items = new List<string>();
+            foreach (object dbLanguageObject in Enum.GetValues(typeof(ProgrammingLanguage)))
+            {
+                var programmingLanguage = (ProgrammingLanguage)dbLanguageObject;
+                
+                switch (programmingLanguage)
+                {                    
+                    case ProgrammingLanguage.MsSQL:
+                        items.Add("MsSQL code");
+                        break;
+                }
+            }
+            return items;
         }
 
         public static string GetLessonName(string lessonBaseName, LessonType lessonType)
