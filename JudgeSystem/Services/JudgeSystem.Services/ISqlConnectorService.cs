@@ -1,7 +1,11 @@
-﻿namespace JudgeSystem.Executors
+﻿using JudgeSystem.Workers.Common;
+
+namespace JudgeSystem.Executors
 {
     public interface ISqlConnectorService
     {
-        bool Execute(string sql);
+        SqlWorkerResult Check(string sql);
+
+        SqlExecutionResult Execute(string sql);
     }
 }

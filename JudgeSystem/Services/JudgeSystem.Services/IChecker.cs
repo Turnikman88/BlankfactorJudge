@@ -10,6 +10,8 @@ namespace JudgeSystem.Services
     {
         CheckerResult Check(ExecutionResult executionResult, string expectedOutput);
 
+        SqlCheckerResult SqlCheck(SqlExecutionResult executionResult, string expectedOutput);
+
         IEnumerable<AutomatedTestResult> CheckAutomatedTestsOutput(IEnumerable<TestDataDto> tests, ProcessResult testResults, string workingDirectory);
     }
 }

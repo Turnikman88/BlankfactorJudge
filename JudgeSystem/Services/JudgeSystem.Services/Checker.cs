@@ -79,5 +79,24 @@ namespace JudgeSystem.Services
                 yield return new AutomatedTestResult(testOuput, isCorrect, test);
             }
         }
+
+        public SqlCheckerResult SqlCheck(SqlExecutionResult executionResult, string expectedOutput)
+        {
+            var checkerResult = new SqlCheckerResult(executionResult);
+
+            if (!executionResult.IsSuccesfull)
+            {
+                checkerResult.IsCorrect = false;
+                return checkerResult;
+            }
+
+            if (executionResult.Output.Trim() == expectedOutput.Trim())
+            {
+                checkerResult.IsCorrect = true;
+            }
+
+
+            return checkerResult;
+        }
     }
 }

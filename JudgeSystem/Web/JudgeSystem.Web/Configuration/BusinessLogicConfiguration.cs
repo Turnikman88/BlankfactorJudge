@@ -52,7 +52,7 @@ namespace JudgeSystem.Web.Configuration
             services.AddTransient<IEmailValidationService, EmailValidationService>();
 
             services.AddTransient<IPlaceholderService, PlaceholderService>();
-            //services.AddTransient<ISqlConnectorService, SqlConnectorService>();
+            services.AddTransient<ISqlConnectorService, SqlConnectorService>();
 
             return services;
         }

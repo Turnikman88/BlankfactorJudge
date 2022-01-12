@@ -41,7 +41,7 @@ namespace JudgeSystem.Services.Data
         private readonly IExecutorFactory executorFactory;
         private readonly IChecker checker;
         private readonly IProcessRunner processRunner;
-       // private readonly ISqlConnectorService sqlConnectorService;
+        private readonly ISqlConnectorService sqlConnectorService;
 
         public SubmissionService(
             IDeletableEntityRepository<Submission> repository,
@@ -54,7 +54,7 @@ namespace JudgeSystem.Services.Data
             ICompilerFactory compilerFactory,
             IExecutorFactory executorFactory,
             IChecker checker,
-            IProcessRunner processRunner/*, ISqlConnectorService sqlConnectorService*/)
+            IProcessRunner processRunner, ISqlConnectorService sqlConnectorService)
         {
             this.repository = repository;
             this.estimator = estimator;
@@ -67,7 +67,7 @@ namespace JudgeSystem.Services.Data
             this.executorFactory = executorFactory;
             this.checker = checker;
             this.processRunner = processRunner;
-            //this.sqlConnectorService = sqlConnectorService;
+            this.sqlConnectorService = sqlConnectorService;
         }
 
         public async Task<SubmissionDto> Create(SubmissionInputModel model, string userId)
@@ -225,7 +225,17 @@ namespace JudgeSystem.Services.Data
             string fileName = codeFiles.First().Name;
             if (programmingLanguage == ProgrammingLanguage.SQL)
             {
-                //sqlConnectorService.Execute(sourceCodes.First());
+                SqlWorkerResult result = sqlConnectorService.Check(sourceCodes.First());
+
+                if (!result.IsCompiledSuccessfully)
+                {
+                    submission.CompilationErrors = Encoding.UTF8.GetBytes(result.Errors);
+                    await Update(submission);
+                }
+                else
+                {
+                    await RunSqlTests(submission, sourceCodes);
+                }
             }
             else
             {
@@ -276,6 +286,33 @@ namespace JudgeSystem.Services.Data
                 {
                     fileSystem.DeleteDirectory(workingDirectory);
                 }
+            }
+        }
+
+        private async Task RunSqlTests(Submission submission, List<string> sourceCodes)
+        {
+            var tests = testService.GetTestsByProblemIdOrderedByIsTrialDescending<TestDataDto>(submission.ProblemId).ToList();
+            foreach (TestDataDto test in tests)
+            {
+                // ExecutionResult executionResult = await executor.Execute(compileResult.OutputFilePath, test.InputData, timeLimit, memoryLimit);
+                SqlExecutionResult executionResult = sqlConnectorService.Execute(sourceCodes.First());
+                SqlCheckerResult checkerResult = checker.SqlCheck(executionResult, test.OutputData);
+
+                Enum.TryParse(checkerResult.Type.ToString(), out TestExecutionResultType executionResultType);
+
+                var executedTest = new ExecutedTest
+                {
+                    TestId = test.Id,
+                    SubmissionId = submission.Id,
+                    ExecutionResultType = executionResultType,
+                    TimeUsed = default,
+                    Output = checkerResult.Output,
+                    Error = checkerResult.Error,
+                    MemoryUsed = default,
+                    IsCorrect = checkerResult.Type == ProcessExecutionResultType.Success && checkerResult.IsCorrect
+                };
+
+                await executedTestService.Create(executedTest);
             }
         }
 
