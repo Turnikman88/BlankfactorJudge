@@ -318,7 +318,9 @@ function changeProblemSubmissions(id) {
                 }
 
                 for (var i = 0; i < problem.sqlCodeItem.length; i++) {
-                    $("#programmingLanguage-select").append(`<option value="${problem.sqlCodeItem[i]}">${problem.sqlCodeItem[i]}</option>`);
+                    //because enumerations for sql start from 4 
+
+                    $("#programmingLanguage-select").append(`<option value="${4 + i}">${problem.sqlCodeItem[i]}</option>`);
                 }
             } else {
                 for (var i = 0; i < len; i++) {
@@ -326,7 +328,7 @@ function changeProblemSubmissions(id) {
                 }
 
                 for (var i = 0; i < problem.progLangItem.length; i++) {
-                    $("#programmingLanguage-select").append(`<option value="${problem.progLangItem[i]}">${problem.progLangItem[i]}</option>`);
+                    $("#programmingLanguage-select").append(`<option value="${i + 1}">${problem.progLangItem[i]}</option>`);
                 }
             }
         })

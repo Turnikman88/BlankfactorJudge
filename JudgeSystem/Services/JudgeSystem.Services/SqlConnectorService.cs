@@ -68,7 +68,7 @@ namespace JudgeSystem.Executors
                         {
                             sbOut.AppendLine(rdr[i].ToString());
                         }
-                        sbOut.AppendLine("----------------------");
+                        sbOut.AppendLine("-----");
                     }
                 }
                 catch (Exception ex)

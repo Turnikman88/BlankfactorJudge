@@ -55,7 +55,7 @@ namespace JudgeSystem.Web.Areas.Administration.Controllers
             ProblemDto problem = await problemService.Create(model);
             if (!string.IsNullOrEmpty(model.SqlCustomViewName))
             {
-                var test = new TestInputModel { LessonId = model.LessonId, ProblemName = model.Name, OutputData = "True" };
+                var test = new TestInputModel { LessonId = model.LessonId, ProblemName = model.Name, OutputData = "True", ProblemId = problem.Id };
                 await testService.Add(test);
                 return RedirectToAction(nameof(All), new { lessonId = problem.LessonId });
             }
