@@ -48,8 +48,10 @@ namespace JudgeSystem.Executors
             return result;
         }
 
-        public SqlExecutionResult Execute(string sql)
+        public SqlExecutionResult Execute(List<string> args)
         {
+            string sql = args[0];
+
             var result = new SqlExecutionResult();
             var sbOut = new StringBuilder();
             var sbEx = new StringBuilder();
@@ -85,5 +87,7 @@ namespace JudgeSystem.Executors
             }
             return result;
         }
+
+        public SqlExecutionResult ExecuteView(List<string> args) => throw new NotImplementedException();
     }
 }

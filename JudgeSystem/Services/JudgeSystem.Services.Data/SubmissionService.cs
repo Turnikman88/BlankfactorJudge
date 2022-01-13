@@ -223,6 +223,7 @@ namespace JudgeSystem.Services.Data
             Submission submission = await repository.FindAsync(submissionId);
             var sourceCodes = codeFiles.Select(x => x.Code).ToList();
             string fileName = codeFiles.First().Name;
+
             if (programmingLanguage == ProgrammingLanguage.MsSQL)
             {
                 SqlWorkerResult result = sqlConnectorService.Check(sourceCodes.First());
@@ -291,11 +292,27 @@ namespace JudgeSystem.Services.Data
 
         private async Task RunSqlTests(Submission submission, List<string> sourceCodes)
         {
+            string sqlViewName = await problemService.GetSqlProblemViewNameById(submission.ProblemId);
+
+            Func<List<string>, SqlExecutionResult> sqlAction = null;
+            var args = new List<string>() { sourceCodes.First() };
+
+            if (sqlViewName != null)
+            {
+                args.Add(sqlViewName);
+                sqlAction = (List<string> input) => sqlConnectorService.ExecuteView(input);
+            }
+            else
+            {
+                sqlAction = (List<string> input) => sqlConnectorService.Execute(input);
+            }
+
             var tests = testService.GetTestsByProblemIdOrderedByIsTrialDescending<TestDataDto>(submission.ProblemId).ToList();
             foreach (TestDataDto test in tests)
             {
                 // ExecutionResult executionResult = await executor.Execute(compileResult.OutputFilePath, test.InputData, timeLimit, memoryLimit);
-                SqlExecutionResult executionResult = sqlConnectorService.Execute(sourceCodes.First());
+                //SqlExecutionResult executionResult = sqlConnectorService.Execute(sourceCodes.First());
+                SqlExecutionResult executionResult = sqlAction(args);
                 SqlCheckerResult checkerResult = checker.SqlCheck(executionResult, test.OutputData);
 
                 Enum.TryParse(checkerResult.Type.ToString(), out TestExecutionResultType executionResultType);
@@ -314,6 +331,7 @@ namespace JudgeSystem.Services.Data
 
                 await executedTestService.Create(executedTest);
             }
+
         }
 
         public int GetSubmissionsCountByProblemIdAndPracticeId(int problemId, int practiceId, string userId) =>

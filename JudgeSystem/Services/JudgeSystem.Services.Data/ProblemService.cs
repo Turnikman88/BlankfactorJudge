@@ -130,6 +130,16 @@ namespace JudgeSystem.Services.Data
             await problemRepository.All()
             .Where(p => p.Id == id)
             .Select(p => p.AutomatedTestingProject)
-            .FirstOrDefaultAsync();        
+            .FirstOrDefaultAsync();
+
+        public async Task<string> GetSqlProblemViewNameById(int id)
+        {
+            string sqlViewName = await problemRepository.All()
+                .Where(x => x.Id == id)
+                .Select(x => x.SqlCustomViewName)
+                .FirstOrDefaultAsync();
+
+            return sqlViewName;
+        }
     }
 }

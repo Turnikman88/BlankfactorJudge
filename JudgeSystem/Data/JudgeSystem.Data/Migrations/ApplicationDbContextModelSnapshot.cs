@@ -390,6 +390,8 @@ namespace JudgeSystem.Data.Migrations
 
                     b.Property<int>("OrderBy");
 
+                    b.Property<string>("SqlCustomViewName");
+
                     b.Property<string>("StartPlaceholder");
 
                     b.Property<int>("SubmissionType");

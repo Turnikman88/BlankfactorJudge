@@ -53,6 +53,12 @@ namespace JudgeSystem.Web.Areas.Administration.Controllers
             }
 
             ProblemDto problem = await problemService.Create(model);
+            if (!string.IsNullOrEmpty(model.SqlCustomViewName))
+            {
+                var test = new TestInputModel { LessonId = model.LessonId, ProblemName = model.Name, OutputData = "True" };
+                await testService.Add(test);
+                return RedirectToAction(nameof(All), new { lessonId = problem.LessonId });
+            }
             return RedirectToAction(nameof(AddTest), "Problem",
                 new { area = GlobalConstants.AdministrationArea, problemId = problem.Id });
         }
@@ -124,8 +130,8 @@ namespace JudgeSystem.Web.Areas.Administration.Controllers
         {
             if (!ModelState.IsValid)
             {
-                model.LessonId = await problemService.GetLessonId(model.ProblemId);
-                return View(model);
+                model.LessonId = await problemService.GetLessonId(model.ProblemId); //
+                return View(model); //
             }
 
             await testService.Add(model);

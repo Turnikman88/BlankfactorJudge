@@ -1,4 +1,5 @@
 ﻿using JudgeSystem.Workers.Common;
+using System.Collections.Generic;
 
 namespace JudgeSystem.Executors
 {
@@ -6,6 +7,8 @@ namespace JudgeSystem.Executors
     {
         SqlWorkerResult Check(string sql);
 
-        SqlExecutionResult Execute(string sql);
+        SqlExecutionResult Execute(List<string> args);
+
+        SqlExecutionResult ExecuteView(List<string> args);
     }
 }

@@ -69,9 +69,9 @@ namespace JudgeSystem.Web.InputModels.Problem
 
         public bool IsSqlTask { get; set; }
 
-        /*[StringLength(200, MinimumLength = 5)]
+        [StringLength(200, MinimumLength = 5)]
         [Display(Name = SqlProcedureDisplayName)]
 
-        public string SqlProcedureName { get; set; }*/
+        public string SqlCustomViewName { get; set; }
     }
 }
