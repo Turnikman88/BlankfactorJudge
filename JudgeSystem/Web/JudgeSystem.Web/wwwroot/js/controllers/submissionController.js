@@ -20,7 +20,7 @@ window.onload = () => {
         hideOneOfCodeInputs(submissionType);
     }
     else {
-        $('li.problemName')[0].classList.add('active-problem');
+        $('li.problem-name')[0].classList.add('active-problem');
     }
 
     $(".active-problem").click();
