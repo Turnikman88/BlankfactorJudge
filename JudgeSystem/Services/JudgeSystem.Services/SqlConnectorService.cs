@@ -68,7 +68,6 @@ namespace JudgeSystem.Executors
                         {
                             sbOut.AppendLine(rdr[i].ToString());
                         }
-                        sbOut.AppendLine("-----");
                     }
                 }
                 catch (Exception ex)
@@ -88,6 +87,58 @@ namespace JudgeSystem.Executors
             return result;
         }
 
-        public SqlExecutionResult ExecuteView(List<string> args) => throw new NotImplementedException();
+        public SqlExecutionResult ExecuteView(List<string> args)
+        {
+            string sql = args[0];
+            string viewName = args[1];
+            string viewCommand = $"select * from {viewName}";
+
+            var result = new SqlExecutionResult();
+            var sbOut = new StringBuilder();
+            var sbView = new StringBuilder();
+            var sbEx = new StringBuilder();
+
+            using (var connection = new SqlConnection(connectionString.Value.ConnectionString))
+            {
+                connection.Open();
+
+                var viewSql = new SqlCommand(viewCommand, connection);
+                ExecuteQuery(sbView, viewSql);
+
+                var userSql = new SqlCommand(sql, connection);
+                try
+                {
+                    ExecuteQuery(sbOut, userSql);
+                }
+                catch (Exception ex)
+                {
+                    if (ex.InnerException != null)
+                    {
+                        sbEx.AppendLine(ex.InnerException.Message.ToString());
+                    }
+                    else
+                    {
+                        sbEx.AppendLine(ex.Message);
+                    }
+                    result.Error = sbEx.ToString();
+                }
+                result.Output = (sbOut.ToString() == sbView.ToString()).ToString();
+            }
+            return result;
+        }
+
+        private static void ExecuteQuery(StringBuilder sb, SqlCommand sql)
+        {
+            using (SqlDataReader rdr = sql.ExecuteReader())
+            {
+                while (rdr.Read())
+                {
+                    for (int i = 0; i < rdr.FieldCount; i++)
+                    {
+                        sb.AppendLine(rdr[i].ToString());
+                    }
+                }
+            }
+        }
     }
 }

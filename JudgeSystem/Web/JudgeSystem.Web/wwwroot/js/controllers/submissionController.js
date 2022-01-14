@@ -4,6 +4,7 @@ let zipFileSubmissionType = "ZipFile";
 let plainCodeSubmissionType = "PlainCode";
 
 window.onload = () => {
+    //if (this.item === undefined) { return }
     if ($("li.problem-name").length === 0) {
         hideOneOfCodeInputs(plainCodeSubmissionType);
         return;
