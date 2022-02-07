@@ -1,0 +1,625 @@
+2022-02-07 17:49:40.476 +02:00 [INF] User profile is available. Using 'C:\Users\Jora\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-02-07 17:49:42.748 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-02-07 17:49:43.145 +02:00 [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-07 17:49:43.153 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-02-07 17:49:43.158 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-02-07 17:49:43.170 +02:00 [INF] No migrations were applied. The database is already up to date.
+2022-02-07 17:49:43.382 +02:00 [INF] Executed DbCommand (57ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[ConcurrencyStamp], [e].[CreatedOn], [e].[DeletedOn], [e].[IsDeleted], [e].[ModifiedOn], [e].[Name], [e].[NormalizedName]
+FROM [AspNetRoles] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[NormalizedName] = @__normalizedName_0)
+2022-02-07 17:49:43.446 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[ConcurrencyStamp], [e].[CreatedOn], [e].[DeletedOn], [e].[IsDeleted], [e].[ModifiedOn], [e].[Name], [e].[NormalizedName]
+FROM [AspNetRoles] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[NormalizedName] = @__normalizedName_0)
+2022-02-07 17:49:43.447 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[ConcurrencyStamp], [e].[CreatedOn], [e].[DeletedOn], [e].[IsDeleted], [e].[ModifiedOn], [e].[Name], [e].[NormalizedName]
+FROM [AspNetRoles] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[NormalizedName] = @__normalizedName_0)
+2022-02-07 17:49:43.448 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[ConcurrencyStamp], [e].[CreatedOn], [e].[DeletedOn], [e].[IsDeleted], [e].[ModifiedOn], [e].[Name], [e].[NormalizedName]
+FROM [AspNetRoles] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[NormalizedName] = @__normalizedName_0)
+2022-02-07 17:49:43.449 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[ConcurrencyStamp], [e].[CreatedOn], [e].[DeletedOn], [e].[IsDeleted], [e].[ModifiedOn], [e].[Name], [e].[NormalizedName]
+FROM [AspNetRoles] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[NormalizedName] = @__normalizedName_0)
+2022-02-07 17:49:43.472 +02:00 [INF] Seeder RolesSeeder done.
+2022-02-07 17:49:43.477 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-02-07 17:49:43.509 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-02-07 17:49:43.512 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-02-07 17:49:43.514 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-02-07 17:49:43.515 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-02-07 17:49:43.516 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-02-07 17:49:43.519 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-02-07 17:49:43.520 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-02-07 17:49:43.520 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-02-07 17:49:43.521 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-02-07 17:49:43.522 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-02-07 17:49:43.522 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-02-07 17:49:43.523 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-02-07 17:49:43.524 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-02-07 17:49:43.524 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-02-07 17:49:43.525 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-02-07 17:49:43.525 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-02-07 17:49:43.526 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-02-07 17:49:43.526 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-02-07 17:49:43.527 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-02-07 17:49:43.528 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-02-07 17:49:43.528 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-02-07 17:49:43.529 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-02-07 17:49:43.530 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-02-07 17:49:43.530 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-02-07 17:49:43.531 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-02-07 17:49:43.533 +02:00 [INF] Seeder SchoolClassesSeeder done.
+2022-02-07 17:49:43.562 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedOn], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[IsDeleted], [e].[IsFromActiveDirectory], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedOn], [e].[Name], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[StudentId], [e].[Surname], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[NormalizedUserName] = @__normalizedUserName_0)
+2022-02-07 17:49:43.620 +02:00 [INF] Seeder AdminSeeder done.
+2022-02-07 17:49:44.315 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:44348/  
+2022-02-07 17:49:44.365 +02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2022-02-07 17:49:44.423 +02:00 [INF] Executing endpoint 'JudgeSystem.Web.Controllers.HomeController.Index (JudgeSystem.Web)'
+2022-02-07 17:49:44.439 +02:00 [INF] Route matched with {action = "Index", controller = "Home", area = "", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller JudgeSystem.Web.Controllers.HomeController (JudgeSystem.Web).
+2022-02-07 17:49:44.451 +02:00 [INF] Executing action method JudgeSystem.Web.Controllers.HomeController.Index (JudgeSystem.Web) - Validation state: "Valid"
+2022-02-07 17:49:44.454 +02:00 [INF] Executed action method JudgeSystem.Web.Controllers.HomeController.Index (JudgeSystem.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.3672ms.
+2022-02-07 17:49:44.477 +02:00 [INF] Executing ViewResult, running view Index.
+2022-02-07 17:49:44.606 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-02-07 17:49:44.655 +02:00 [WRN] The LINQ expression 'where [e].IsActive' could not be translated and will be evaluated locally.
+2022-02-07 17:49:44.680 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[CreatedOn], [e].[DeletedOn], [e].[EndTime], [e].[IsDeleted], [e].[LessonId], [e].[ModifiedOn], [e].[Name], [e].[StartTime]
+FROM [Contests] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[IsDeleted] = 0)
+2022-02-07 17:49:44.739 +02:00 [WRN] The LINQ expression 'where ((DateTime.Now - [e].EndTime).Days <= __passedDays_0)' could not be translated and will be evaluated locally.
+2022-02-07 17:49:44.760 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EndTime], [e].[LessonId], [t0].[Id] AS [LessonPracticeId], [e].[Name]
+FROM [Contests] AS [e]
+INNER JOIN (
+    SELECT [e0].*
+    FROM [Lessons] AS [e0]
+    WHERE [e0].[IsDeleted] = 0
+) AS [t] ON [e].[LessonId] = [t].[Id]
+LEFT JOIN (
+    SELECT [e1].*
+    FROM [Practices] AS [e1]
+    WHERE [e1].[IsDeleted] = 0
+) AS [t0] ON [t].[Id] = [t0].[LessonId]
+WHERE (([e].[IsDeleted] = 0) AND ([e].[IsDeleted] = 0)) AND ([e].[EndTime] < GETDATE())
+2022-02-07 17:49:44.923 +02:00 [INF] Executed ViewResult - view Index executed in 459.0303ms.
+2022-02-07 17:49:44.933 +02:00 [INF] Executed action JudgeSystem.Web.Controllers.HomeController.Index (JudgeSystem.Web) in 492.99370000000005ms
+2022-02-07 17:49:44.934 +02:00 [INF] Executed endpoint 'JudgeSystem.Web.Controllers.HomeController.Index (JudgeSystem.Web)'
+2022-02-07 17:49:45.042 +02:00 [ERR] Error closing the session.
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'dbo.Cache'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader()
+   at System.Data.SqlClient.SqlCommand.InternalEndExecuteReader(IAsyncResult asyncResult, String endMethod)
+   at System.Data.SqlClient.SqlCommand.EndExecuteReaderInternal(IAsyncResult asyncResult)
+   at System.Data.SqlClient.SqlCommand.EndExecuteReader(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Extensions.Caching.SqlServer.DatabaseOperations.GetCacheItemAsync(String key, Boolean includeValue, CancellationToken token)
+   at Microsoft.Extensions.Caching.SqlServer.DatabaseOperations.RefreshCacheItemAsync(String key, CancellationToken token)
+   at Microsoft.Extensions.Caching.SqlServer.SqlServerCache.RefreshAsync(String key, CancellationToken token)
+   at Microsoft.AspNetCore.Session.DistributedSession.CommitAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+ClientConnectionId:91b91a0a-c796-4662-b308-9ccb1ec9849a
+Error Number:208,State:1,Class:16
+2022-02-07 17:49:45.073 +02:00 [INF] Request finished in 764.5198ms 200 text/html; charset=utf-8
+2022-02-07 17:49:48.382 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:44348/Identity/Account/Login  
+2022-02-07 17:49:48.384 +02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2022-02-07 17:49:48.389 +02:00 [INF] Executing endpoint 'Page: /Account/Login'
+2022-02-07 17:49:48.448 +02:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2022-02-07 17:49:48.454 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-02-07 17:49:48.485 +02:00 [INF] Executing handler method JudgeSystem.Web.Areas.Identity.Pages.Account.LoginModel.OnGetAsync - ModelState is "Valid"
+2022-02-07 17:49:48.491 +02:00 [INF] AuthenticationScheme: Identity.External signed out.
+2022-02-07 17:49:48.491 +02:00 [INF] Executed handler method OnGetAsync, returned result .
+2022-02-07 17:49:48.493 +02:00 [INF] Executing an implicit handler method - ModelState is "Valid"
+2022-02-07 17:49:48.493 +02:00 [INF] Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult.
+2022-02-07 17:49:48.580 +02:00 [INF] Executed page /Account/Login in 131.48090000000002ms
+2022-02-07 17:49:48.580 +02:00 [INF] Executed endpoint 'Page: /Account/Login'
+2022-02-07 17:49:48.586 +02:00 [ERR] Error closing the session.
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'dbo.Cache'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader()
+   at System.Data.SqlClient.SqlCommand.InternalEndExecuteReader(IAsyncResult asyncResult, String endMethod)
+   at System.Data.SqlClient.SqlCommand.EndExecuteReaderInternal(IAsyncResult asyncResult)
+   at System.Data.SqlClient.SqlCommand.EndExecuteReader(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Extensions.Caching.SqlServer.DatabaseOperations.GetCacheItemAsync(String key, Boolean includeValue, CancellationToken token)
+   at Microsoft.Extensions.Caching.SqlServer.DatabaseOperations.RefreshCacheItemAsync(String key, CancellationToken token)
+   at Microsoft.Extensions.Caching.SqlServer.SqlServerCache.RefreshAsync(String key, CancellationToken token)
+   at Microsoft.AspNetCore.Session.DistributedSession.CommitAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+ClientConnectionId:91b91a0a-c796-4662-b308-9ccb1ec9849a
+Error Number:208,State:1,Class:16
+2022-02-07 17:49:48.589 +02:00 [INF] Request finished in 206.5225ms 200 text/html; charset=utf-8
+2022-02-07 17:49:50.036 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:44348/Identity/Account/Login application/x-www-form-urlencoded 259
+2022-02-07 17:49:50.036 +02:00 [INF] Identity.Application was not authenticated. Failure message: Unprotect ticket failed
+2022-02-07 17:49:50.046 +02:00 [INF] Executing endpoint 'Page: /Account/Login'
+2022-02-07 17:49:50.046 +02:00 [INF] Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing page /Account/Login
+2022-02-07 17:49:50.068 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-02-07 17:49:50.083 +02:00 [INF] Executing handler method JudgeSystem.Web.Areas.Identity.Pages.Account.LoginModel.OnPostAsync - ModelState is "Valid"
+2022-02-07 17:49:50.088 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedOn], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[IsDeleted], [e].[IsFromActiveDirectory], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedOn], [e].[Name], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[StudentId], [e].[Surname], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[NormalizedUserName] = @__normalizedUserName_0)
+2022-02-07 17:49:50.152 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2022-02-07 17:49:50.184 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN (
+    SELECT [e].*
+    FROM [AspNetRoles] AS [e]
+    WHERE [e].[IsDeleted] = 0
+) AS [t] ON [userRole].[RoleId] = [t].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2022-02-07 17:49:50.189 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[ConcurrencyStamp], [e].[CreatedOn], [e].[DeletedOn], [e].[IsDeleted], [e].[ModifiedOn], [e].[Name], [e].[NormalizedName]
+FROM [AspNetRoles] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[NormalizedName] = @__normalizedName_0)
+2022-02-07 17:49:50.202 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2022-02-07 17:49:50.205 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[ConcurrencyStamp], [e].[CreatedOn], [e].[DeletedOn], [e].[IsDeleted], [e].[ModifiedOn], [e].[Name], [e].[NormalizedName]
+FROM [AspNetRoles] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[NormalizedName] = @__normalizedName_0)
+2022-02-07 17:49:50.206 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2022-02-07 17:49:50.206 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[ConcurrencyStamp], [e].[CreatedOn], [e].[DeletedOn], [e].[IsDeleted], [e].[ModifiedOn], [e].[Name], [e].[NormalizedName]
+FROM [AspNetRoles] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[NormalizedName] = @__normalizedName_0)
+2022-02-07 17:49:50.207 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2022-02-07 17:49:50.215 +02:00 [INF] AuthenticationScheme: Identity.Application signed in.
+2022-02-07 17:49:50.220 +02:00 [INF] Executed handler method OnPostAsync, returned result Microsoft.AspNetCore.Mvc.LocalRedirectResult.
+2022-02-07 17:49:50.225 +02:00 [INF] Executing LocalRedirectResult, redirecting to /.
+2022-02-07 17:49:50.225 +02:00 [INF] Executed page /Account/Login in 178.84040000000002ms
+2022-02-07 17:49:50.225 +02:00 [INF] Executed endpoint 'Page: /Account/Login'
+2022-02-07 17:49:50.227 +02:00 [ERR] Error closing the session.
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'dbo.Cache'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader()
+   at System.Data.SqlClient.SqlCommand.InternalEndExecuteReader(IAsyncResult asyncResult, String endMethod)
+   at System.Data.SqlClient.SqlCommand.EndExecuteReaderInternal(IAsyncResult asyncResult)
+   at System.Data.SqlClient.SqlCommand.EndExecuteReader(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Extensions.Caching.SqlServer.DatabaseOperations.GetCacheItemAsync(String key, Boolean includeValue, CancellationToken token)
+   at Microsoft.Extensions.Caching.SqlServer.DatabaseOperations.RefreshCacheItemAsync(String key, CancellationToken token)
+   at Microsoft.Extensions.Caching.SqlServer.SqlServerCache.RefreshAsync(String key, CancellationToken token)
+   at Microsoft.AspNetCore.Session.DistributedSession.CommitAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+ClientConnectionId:91b91a0a-c796-4662-b308-9ccb1ec9849a
+Error Number:208,State:1,Class:16
+2022-02-07 17:49:50.229 +02:00 [INF] Request finished in 193.2781ms 302 
+2022-02-07 17:49:50.234 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:44348/  
+2022-02-07 17:49:50.241 +02:00 [INF] Executing endpoint 'JudgeSystem.Web.Controllers.HomeController.Index (JudgeSystem.Web)'
+2022-02-07 17:49:50.241 +02:00 [INF] Route matched with {action = "Index", controller = "Home", area = "", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller JudgeSystem.Web.Controllers.HomeController (JudgeSystem.Web).
+2022-02-07 17:49:50.242 +02:00 [INF] Executing action method JudgeSystem.Web.Controllers.HomeController.Index (JudgeSystem.Web) - Validation state: "Valid"
+2022-02-07 17:49:50.242 +02:00 [INF] Executed action method JudgeSystem.Web.Controllers.HomeController.Index (JudgeSystem.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.039ms.
+2022-02-07 17:49:50.242 +02:00 [INF] Executing ViewResult, running view Index.
+2022-02-07 17:49:50.243 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-02-07 17:49:50.244 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[CreatedOn], [e].[DeletedOn], [e].[EndTime], [e].[IsDeleted], [e].[LessonId], [e].[ModifiedOn], [e].[Name], [e].[StartTime]
+FROM [Contests] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[IsDeleted] = 0)
+2022-02-07 17:49:50.246 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EndTime], [e].[LessonId], [t0].[Id] AS [LessonPracticeId], [e].[Name]
+FROM [Contests] AS [e]
+INNER JOIN (
+    SELECT [e0].*
+    FROM [Lessons] AS [e0]
+    WHERE [e0].[IsDeleted] = 0
+) AS [t] ON [e].[LessonId] = [t].[Id]
+LEFT JOIN (
+    SELECT [e1].*
+    FROM [Practices] AS [e1]
+    WHERE [e1].[IsDeleted] = 0
+) AS [t0] ON [t].[Id] = [t0].[LessonId]
+WHERE (([e].[IsDeleted] = 0) AND ([e].[IsDeleted] = 0)) AND ([e].[EndTime] < GETDATE())
+2022-02-07 17:49:50.717 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [x].[PracticeId]
+FROM [UserPractices] AS [x]
+WHERE [x].[UserId] = @__userId_0
+2022-02-07 17:49:50.737 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id] AS [Id0], [e].[Name], [t].[Id] AS [PracticeId], [e].[Type]
+FROM [Lessons] AS [e]
+LEFT JOIN (
+    SELECT [e0].*
+    FROM [Practices] AS [e0]
+    WHERE [e0].[IsDeleted] = 0
+) AS [t] ON [e].[Id] = [t].[LessonId]
+WHERE (([e].[IsDeleted] = 0) AND ([e].[IsDeleted] = 0)) AND [t].[Id] NOT IN (1)
+2022-02-07 17:49:50.786 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[Name]
+FROM [Courses] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[IsDeleted] = 0)
+ORDER BY [e].[OrderBy]
+2022-02-07 17:49:50.804 +02:00 [INF] Executed ViewResult - view Index executed in 562.5701ms.
+2022-02-07 17:49:50.805 +02:00 [INF] Executed action JudgeSystem.Web.Controllers.HomeController.Index (JudgeSystem.Web) in 563.2119ms
+2022-02-07 17:49:50.805 +02:00 [INF] Executed endpoint 'JudgeSystem.Web.Controllers.HomeController.Index (JudgeSystem.Web)'
+2022-02-07 17:49:50.806 +02:00 [ERR] Error closing the session.
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'dbo.Cache'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader()
+   at System.Data.SqlClient.SqlCommand.InternalEndExecuteReader(IAsyncResult asyncResult, String endMethod)
+   at System.Data.SqlClient.SqlCommand.EndExecuteReaderInternal(IAsyncResult asyncResult)
+   at System.Data.SqlClient.SqlCommand.EndExecuteReader(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Extensions.Caching.SqlServer.DatabaseOperations.GetCacheItemAsync(String key, Boolean includeValue, CancellationToken token)
+   at Microsoft.Extensions.Caching.SqlServer.DatabaseOperations.RefreshCacheItemAsync(String key, CancellationToken token)
+   at Microsoft.Extensions.Caching.SqlServer.SqlServerCache.RefreshAsync(String key, CancellationToken token)
+   at Microsoft.AspNetCore.Session.DistributedSession.CommitAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+ClientConnectionId:91b91a0a-c796-4662-b308-9ccb1ec9849a
+Error Number:208,State:1,Class:16
+2022-02-07 17:49:50.808 +02:00 [INF] Request finished in 573.1592ms 200 text/html; charset=utf-8
+2022-02-07 17:49:54.714 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:44348/Administration/Course/Create  
+2022-02-07 17:49:54.716 +02:00 [INF] Executing endpoint 'JudgeSystem.Web.Areas.Administration.Controllers.CourseController.Create (JudgeSystem.Web)'
+2022-02-07 17:49:54.720 +02:00 [INF] Route matched with {area = "Administration", action = "Create", controller = "Course", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create() on controller JudgeSystem.Web.Areas.Administration.Controllers.CourseController (JudgeSystem.Web).
+2022-02-07 17:49:54.737 +02:00 [INF] Authorization was successful.
+2022-02-07 17:49:54.738 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-02-07 17:49:54.738 +02:00 [INF] Executing action method JudgeSystem.Web.Areas.Administration.Controllers.CourseController.Create (JudgeSystem.Web) - Validation state: "Valid"
+2022-02-07 17:49:54.738 +02:00 [INF] Executed action method JudgeSystem.Web.Areas.Administration.Controllers.CourseController.Create (JudgeSystem.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.099600000000000008ms.
+2022-02-07 17:49:54.743 +02:00 [INF] Executing ViewResult, running view Create.
+2022-02-07 17:49:54.775 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[Name]
+FROM [Courses] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[IsDeleted] = 0)
+ORDER BY [e].[OrderBy]
+2022-02-07 17:49:54.779 +02:00 [INF] Executed ViewResult - view Create executed in 41.214600000000004ms.
+2022-02-07 17:49:54.780 +02:00 [INF] Executed action JudgeSystem.Web.Areas.Administration.Controllers.CourseController.Create (JudgeSystem.Web) in 59.7501ms
+2022-02-07 17:49:54.780 +02:00 [INF] Executed endpoint 'JudgeSystem.Web.Areas.Administration.Controllers.CourseController.Create (JudgeSystem.Web)'
+2022-02-07 17:49:54.782 +02:00 [ERR] Error closing the session.
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'dbo.Cache'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader()
+   at System.Data.SqlClient.SqlCommand.InternalEndExecuteReader(IAsyncResult asyncResult, String endMethod)
+   at System.Data.SqlClient.SqlCommand.EndExecuteReaderInternal(IAsyncResult asyncResult)
+   at System.Data.SqlClient.SqlCommand.EndExecuteReader(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Extensions.Caching.SqlServer.DatabaseOperations.GetCacheItemAsync(String key, Boolean includeValue, CancellationToken token)
+   at Microsoft.Extensions.Caching.SqlServer.DatabaseOperations.RefreshCacheItemAsync(String key, CancellationToken token)
+   at Microsoft.Extensions.Caching.SqlServer.SqlServerCache.RefreshAsync(String key, CancellationToken token)
+   at Microsoft.AspNetCore.Session.DistributedSession.CommitAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+ClientConnectionId:91b91a0a-c796-4662-b308-9ccb1ec9849a
+Error Number:208,State:1,Class:16
+2022-02-07 17:49:54.783 +02:00 [INF] Request finished in 68.8316ms 200 text/html; charset=utf-8
+2022-02-07 17:50:01.297 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:44348/Administration/Course/Create application/x-www-form-urlencoded 253
+2022-02-07 17:50:01.302 +02:00 [INF] Executing endpoint 'JudgeSystem.Web.Areas.Administration.Controllers.CourseController.Create (JudgeSystem.Web)'
+2022-02-07 17:50:01.308 +02:00 [INF] Route matched with {area = "Administration", action = "Create", controller = "Course", page = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(JudgeSystem.Web.InputModels.Course.CourseInputModel) on controller JudgeSystem.Web.Areas.Administration.Controllers.CourseController (JudgeSystem.Web).
+2022-02-07 17:50:01.309 +02:00 [INF] Authorization was successful.
+2022-02-07 17:50:01.310 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-02-07 17:50:01.315 +02:00 [INF] Executing action method JudgeSystem.Web.Areas.Administration.Controllers.CourseController.Create (JudgeSystem.Web) - Validation state: "Valid"
+2022-02-07 17:50:01.425 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Boolean), @p3='?' (DbType = DateTime2), @p4='?' (Size = 50), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Courses] ([CreatedOn], [DeletedOn], [IsDeleted], [ModifiedOn], [Name], [OrderBy])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [Courses]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-02-07 17:50:01.450 +02:00 [INF] Executed action method JudgeSystem.Web.Areas.Administration.Controllers.CourseController.Create (JudgeSystem.Web), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 135.0088ms.
+2022-02-07 17:50:01.454 +02:00 [INF] Executing RedirectResult, redirecting to /Course/All.
+2022-02-07 17:50:01.454 +02:00 [INF] Executed action JudgeSystem.Web.Areas.Administration.Controllers.CourseController.Create (JudgeSystem.Web) in 145.166ms
+2022-02-07 17:50:01.454 +02:00 [INF] Executed endpoint 'JudgeSystem.Web.Areas.Administration.Controllers.CourseController.Create (JudgeSystem.Web)'
+2022-02-07 17:50:01.456 +02:00 [ERR] Error closing the session.
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'dbo.Cache'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader()
+   at System.Data.SqlClient.SqlCommand.InternalEndExecuteReader(IAsyncResult asyncResult, String endMethod)
+   at System.Data.SqlClient.SqlCommand.EndExecuteReaderInternal(IAsyncResult asyncResult)
+   at System.Data.SqlClient.SqlCommand.EndExecuteReader(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Extensions.Caching.SqlServer.DatabaseOperations.GetCacheItemAsync(String key, Boolean includeValue, CancellationToken token)
+   at Microsoft.Extensions.Caching.SqlServer.DatabaseOperations.RefreshCacheItemAsync(String key, CancellationToken token)
+   at Microsoft.Extensions.Caching.SqlServer.SqlServerCache.RefreshAsync(String key, CancellationToken token)
+   at Microsoft.AspNetCore.Session.DistributedSession.CommitAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+ClientConnectionId:91b91a0a-c796-4662-b308-9ccb1ec9849a
+Error Number:208,State:1,Class:16
+2022-02-07 17:50:01.457 +02:00 [INF] Request finished in 160.1669ms 302 
+2022-02-07 17:50:01.463 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:44348/Course/All  
+2022-02-07 17:50:01.463 +02:00 [INF] Executing endpoint 'JudgeSystem.Web.Controllers.CourseController.All (JudgeSystem.Web)'
+2022-02-07 17:50:01.465 +02:00 [INF] Route matched with {action = "All", controller = "Course", area = "", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult All() on controller JudgeSystem.Web.Controllers.CourseController (JudgeSystem.Web).
+2022-02-07 17:50:01.465 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-02-07 17:50:01.465 +02:00 [INF] Executing action method JudgeSystem.Web.Controllers.CourseController.All (JudgeSystem.Web) - Validation state: "Valid"
+2022-02-07 17:50:01.468 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[Name]
+FROM [Courses] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[IsDeleted] = 0)
+ORDER BY [e].[OrderBy]
+2022-02-07 17:50:01.468 +02:00 [INF] Executed action method JudgeSystem.Web.Controllers.CourseController.All (JudgeSystem.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2.9029000000000003ms.
+2022-02-07 17:50:01.471 +02:00 [INF] Executing ViewResult, running view All.
+2022-02-07 17:50:01.487 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[Name]
+FROM [Courses] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[IsDeleted] = 0)
+ORDER BY [e].[OrderBy]
+2022-02-07 17:50:01.493 +02:00 [INF] Executed ViewResult - view All executed in 24.929100000000002ms.
+2022-02-07 17:50:01.493 +02:00 [INF] Executed action JudgeSystem.Web.Controllers.CourseController.All (JudgeSystem.Web) in 28.5349ms
+2022-02-07 17:50:01.493 +02:00 [INF] Executed endpoint 'JudgeSystem.Web.Controllers.CourseController.All (JudgeSystem.Web)'
+2022-02-07 17:50:01.495 +02:00 [ERR] Error closing the session.
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'dbo.Cache'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader()
+   at System.Data.SqlClient.SqlCommand.InternalEndExecuteReader(IAsyncResult asyncResult, String endMethod)
+   at System.Data.SqlClient.SqlCommand.EndExecuteReaderInternal(IAsyncResult asyncResult)
+   at System.Data.SqlClient.SqlCommand.EndExecuteReader(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Extensions.Caching.SqlServer.DatabaseOperations.GetCacheItemAsync(String key, Boolean includeValue, CancellationToken token)
+   at Microsoft.Extensions.Caching.SqlServer.DatabaseOperations.RefreshCacheItemAsync(String key, CancellationToken token)
+   at Microsoft.Extensions.Caching.SqlServer.SqlServerCache.RefreshAsync(String key, CancellationToken token)
+   at Microsoft.AspNetCore.Session.DistributedSession.CommitAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+ClientConnectionId:91b91a0a-c796-4662-b308-9ccb1ec9849a
+Error Number:208,State:1,Class:16
+2022-02-07 17:50:01.496 +02:00 [INF] Request finished in 33.4165ms 200 text/html; charset=utf-8
+2022-02-07 17:50:52.765 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:44348/Administration/Course/Create  
+2022-02-07 17:50:52.766 +02:00 [INF] Executing endpoint 'JudgeSystem.Web.Areas.Administration.Controllers.CourseController.Create (JudgeSystem.Web)'
+2022-02-07 17:50:52.766 +02:00 [INF] Route matched with {area = "Administration", action = "Create", controller = "Course", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create() on controller JudgeSystem.Web.Areas.Administration.Controllers.CourseController (JudgeSystem.Web).
+2022-02-07 17:50:52.766 +02:00 [INF] Authorization was successful.
+2022-02-07 17:50:52.767 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-02-07 17:50:52.767 +02:00 [INF] Executing action method JudgeSystem.Web.Areas.Administration.Controllers.CourseController.Create (JudgeSystem.Web) - Validation state: "Valid"
+2022-02-07 17:50:52.767 +02:00 [INF] Executed action method JudgeSystem.Web.Areas.Administration.Controllers.CourseController.Create (JudgeSystem.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0151ms.
+2022-02-07 17:50:52.767 +02:00 [INF] Executing ViewResult, running view Create.
+2022-02-07 17:50:52.773 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[Name]
+FROM [Courses] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[IsDeleted] = 0)
+ORDER BY [e].[OrderBy]
+2022-02-07 17:50:52.775 +02:00 [INF] Executed ViewResult - view Create executed in 7.8219ms.
+2022-02-07 17:50:52.775 +02:00 [INF] Executed action JudgeSystem.Web.Areas.Administration.Controllers.CourseController.Create (JudgeSystem.Web) in 8.650500000000001ms
+2022-02-07 17:50:52.775 +02:00 [INF] Executed endpoint 'JudgeSystem.Web.Areas.Administration.Controllers.CourseController.Create (JudgeSystem.Web)'
+2022-02-07 17:50:52.778 +02:00 [ERR] Error closing the session.
+System.Data.SqlClient.SqlException (0x80131904): Invalid object name 'dbo.Cache'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader()
+   at System.Data.SqlClient.SqlCommand.InternalEndExecuteReader(IAsyncResult asyncResult, String endMethod)
+   at System.Data.SqlClient.SqlCommand.EndExecuteReaderInternal(IAsyncResult asyncResult)
+   at System.Data.SqlClient.SqlCommand.EndExecuteReader(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.Extensions.Caching.SqlServer.DatabaseOperations.GetCacheItemAsync(String key, Boolean includeValue, CancellationToken token)
+   at Microsoft.Extensions.Caching.SqlServer.DatabaseOperations.RefreshCacheItemAsync(String key, CancellationToken token)
+   at Microsoft.Extensions.Caching.SqlServer.SqlServerCache.RefreshAsync(String key, CancellationToken token)
+   at Microsoft.AspNetCore.Session.DistributedSession.CommitAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+ClientConnectionId:91b91a0a-c796-4662-b308-9ccb1ec9849a
+Error Number:208,State:1,Class:16
+2022-02-07 17:50:52.781 +02:00 [INF] Request finished in 16.3763ms 200 text/html; charset=utf-8

@@ -27,8 +27,8 @@ namespace JudgeSystem.Web.ViewModels.ExecutedTest
 
 		public TestExecutionResultType ExecutionResultType { get; set; }
 
-		[IgnoreMap]
-		public string ExecutionResult
+        [IgnoreMap] //net6change
+        public string ExecutionResult
 		{
 			get
 			{
@@ -45,7 +45,7 @@ namespace JudgeSystem.Web.ViewModels.ExecutedTest
 				{
 					exectionResult = "Time limit";
 				}
-				else if(ExecutionResultType == TestExecutionResultType.Success && this.IsCorrect)
+				else if(ExecutionResultType == TestExecutionResultType.Success && IsCorrect)
 				{
 					exectionResult = "Correct answer";
 				}

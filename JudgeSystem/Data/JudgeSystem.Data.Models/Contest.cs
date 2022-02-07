@@ -15,7 +15,8 @@ namespace JudgeSystem.Data.Models
 			UserContests = new HashSet<UserContest>();
 			Submissions = new HashSet<Submission>();
             AllowedIpAddresses = new HashSet<AllowedIpAddressContest>();
-		}
+            IsActive = StartTime < DateTime.Now && EndTime > DateTime.Now;
+        }
 
 		[Required]
 		[MaxLength(ModelConstants.ContestNameMaxLength)]
@@ -25,10 +26,9 @@ namespace JudgeSystem.Data.Models
 
 		public DateTime EndTime { get; set; }
 
-		[NotMapped]
-		public bool IsActive => StartTime < DateTime.Now && EndTime > DateTime.Now;
+		public bool IsActive { get; set; }
 
-		public int LessonId { get; set; }
+        public int LessonId { get; set; }
 		public Lesson Lesson { get; set; }
 
 		public ICollection<UserContest> UserContests { get; set; }

@@ -11,11 +11,11 @@ namespace JudgeSystem.Services
 {
     public class StudentProfileService : IStudentProfileService
     {
-        private readonly IHostingEnvironment environment;
+        private readonly IWebHostEnvironment environment;
         private readonly IEmailSender emailSender;
 
         public StudentProfileService(
-            IHostingEnvironment environment,
+            IWebHostEnvironment environment,
             IEmailSender emailSender)
         {
             this.environment = environment;

@@ -4,6 +4,7 @@ using JudgeSystem.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JudgeSystem.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220207135531_test")]
+    partial class test
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,7 +52,7 @@ namespace JudgeSystem.Data.Migrations
 
                     b.HasIndex("IsDeleted");
 
-                    b.ToTable("AllowedIpAddresses", (string)null);
+                    b.ToTable("AllowedIpAddresses");
                 });
 
             modelBuilder.Entity("JudgeSystem.Data.Models.AllowedIpAddressContest", b =>
@@ -65,7 +67,7 @@ namespace JudgeSystem.Data.Migrations
 
                     b.HasIndex("ContestId");
 
-                    b.ToTable("AllowedIpAddressContests", (string)null);
+                    b.ToTable("AllowedIpAddressContests");
                 });
 
             modelBuilder.Entity("JudgeSystem.Data.Models.ApplicationRole", b =>
@@ -249,7 +251,7 @@ namespace JudgeSystem.Data.Migrations
 
                     b.HasIndex("LessonId");
 
-                    b.ToTable("Contests", (string)null);
+                    b.ToTable("Contests");
                 });
 
             modelBuilder.Entity("JudgeSystem.Data.Models.Course", b =>
@@ -284,7 +286,7 @@ namespace JudgeSystem.Data.Migrations
 
                     b.HasIndex("IsDeleted");
 
-                    b.ToTable("Courses", (string)null);
+                    b.ToTable("Courses");
                 });
 
             modelBuilder.Entity("JudgeSystem.Data.Models.ExecutedTest", b =>
@@ -331,7 +333,7 @@ namespace JudgeSystem.Data.Migrations
 
                     b.HasIndex("TestId");
 
-                    b.ToTable("ExecutedTests", (string)null);
+                    b.ToTable("ExecutedTests");
                 });
 
             modelBuilder.Entity("JudgeSystem.Data.Models.Feedback", b =>
@@ -368,7 +370,7 @@ namespace JudgeSystem.Data.Migrations
 
                     b.HasIndex("SenderId");
 
-                    b.ToTable("Feedbacks", (string)null);
+                    b.ToTable("Feedbacks");
                 });
 
             modelBuilder.Entity("JudgeSystem.Data.Models.Lesson", b =>
@@ -414,7 +416,7 @@ namespace JudgeSystem.Data.Migrations
 
                     b.HasIndex("IsDeleted");
 
-                    b.ToTable("Lessons", (string)null);
+                    b.ToTable("Lessons");
                 });
 
             modelBuilder.Entity("JudgeSystem.Data.Models.Practice", b =>
@@ -447,7 +449,7 @@ namespace JudgeSystem.Data.Migrations
                     b.HasIndex("LessonId")
                         .IsUnique();
 
-                    b.ToTable("Practices", (string)null);
+                    b.ToTable("Practices");
                 });
 
             modelBuilder.Entity("JudgeSystem.Data.Models.Problem", b =>
@@ -531,7 +533,7 @@ namespace JudgeSystem.Data.Migrations
 
                     b.HasIndex("LessonId");
 
-                    b.ToTable("Problems", (string)null);
+                    b.ToTable("Problems");
                 });
 
             modelBuilder.Entity("JudgeSystem.Data.Models.Resource", b =>
@@ -567,7 +569,7 @@ namespace JudgeSystem.Data.Migrations
 
                     b.HasIndex("LessonId");
 
-                    b.ToTable("Resources", (string)null);
+                    b.ToTable("Resources");
                 });
 
             modelBuilder.Entity("JudgeSystem.Data.Models.SchoolClass", b =>
@@ -600,7 +602,7 @@ namespace JudgeSystem.Data.Migrations
 
                     b.HasIndex("IsDeleted");
 
-                    b.ToTable("SchoolClasses", (string)null);
+                    b.ToTable("SchoolClasses");
                 });
 
             modelBuilder.Entity("JudgeSystem.Data.Models.Student", b =>
@@ -641,7 +643,7 @@ namespace JudgeSystem.Data.Migrations
 
                     b.HasIndex("SchoolClassId");
 
-                    b.ToTable("Students", (string)null);
+                    b.ToTable("Students");
                 });
 
             modelBuilder.Entity("JudgeSystem.Data.Models.Submission", b =>
@@ -704,7 +706,7 @@ namespace JudgeSystem.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Submissions", (string)null);
+                    b.ToTable("Submissions");
                 });
 
             modelBuilder.Entity("JudgeSystem.Data.Models.Test", b =>
@@ -735,7 +737,7 @@ namespace JudgeSystem.Data.Migrations
 
                     b.HasIndex("ProblemId");
 
-                    b.ToTable("Tests", (string)null);
+                    b.ToTable("Tests");
                 });
 
             modelBuilder.Entity("JudgeSystem.Data.Models.UserContest", b =>
@@ -750,7 +752,7 @@ namespace JudgeSystem.Data.Migrations
 
                     b.HasIndex("ContestId");
 
-                    b.ToTable("UserContests", (string)null);
+                    b.ToTable("UserContests");
                 });
 
             modelBuilder.Entity("JudgeSystem.Data.Models.UserPractice", b =>
@@ -765,7 +767,7 @@ namespace JudgeSystem.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserPractices", (string)null);
+                    b.ToTable("UserPractices");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

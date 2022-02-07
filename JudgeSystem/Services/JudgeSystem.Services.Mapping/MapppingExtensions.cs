@@ -17,7 +17,7 @@ namespace JudgeSystem.Services.Mapping
             {
                 throw new ArgumentNullException(nameof(source));
             }
-
+            //return null; // net6change
             return source.ProjectTo(membersToExpand);
         }
 
@@ -31,8 +31,9 @@ namespace JudgeSystem.Services.Mapping
             }
 
             return source.ProjectTo<TDestination>(parameters);
+            //return null; //net6change
         }
 
-        public static Destination To<Destination>(this object source) => Mapper.Map<Destination>(source);
+        public static Destination To<Destination>(this object source) => Mapper.Map<Destination>(source); //net6change
     }
 }

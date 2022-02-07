@@ -11,7 +11,6 @@ using JudgeSystem.Web.Tests.Mocks;
 using JudgeSystem.Web.Tests.TestData;
 using JudgeSystem.Web.ViewModels.Resource;
 
-using Microsoft.AspNetCore.Http.Internal;
 
 using MyTested.AspNetCore.Mvc;
 using Xunit;

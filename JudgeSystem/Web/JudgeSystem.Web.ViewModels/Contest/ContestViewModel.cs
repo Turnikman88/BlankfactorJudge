@@ -18,10 +18,10 @@ namespace JudgeSystem.Web.ViewModels.Contest
 
 		public DateTime EndTime { get; set; }
 
-        [IgnoreMap]
-		public string FormatedStartTime => StartTime.ToString(GlobalConstants.StandardDateFormat, CultureInfo.InvariantCulture);
+        [IgnoreMap] //net6change
+        public string FormatedStartTime => StartTime.ToString(GlobalConstants.StandardDateFormat, CultureInfo.InvariantCulture);
 
-		[IgnoreMap]
-		public string FormatedEndTime => EndTime.ToString(GlobalConstants.StandardDateFormat, CultureInfo.InvariantCulture);
+        [IgnoreMap] //net6change
+        public string FormatedEndTime => EndTime.ToString(GlobalConstants.StandardDateFormat, CultureInfo.InvariantCulture);
 	}
 }

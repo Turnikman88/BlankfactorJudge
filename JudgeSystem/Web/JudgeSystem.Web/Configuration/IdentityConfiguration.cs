@@ -26,7 +26,7 @@ namespace JudgeSystem.Web.Configuration
                .AddUserStore<ApplicationUserStore>()
                .AddRoleStore<ApplicationRoleStore>()
                .AddDefaultTokenProviders()
-               .AddDefaultUI(UIFramework.Bootstrap4);
+               .AddDefaultUI(); //net6change/
 
             services.AddTransient<IUserStore<ApplicationUser>, ApplicationUserStore>();
             services.AddTransient<IRoleStore<ApplicationRole>, ApplicationRoleStore>();

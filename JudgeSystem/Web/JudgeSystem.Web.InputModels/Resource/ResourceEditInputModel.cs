@@ -16,8 +16,8 @@ namespace JudgeSystem.Web.InputModels.Resource
         [StringLength(ModelConstants.ResourceNameMaxLength, MinimumLength = ModelConstants.ResourceNameMinLength)]
         public string Name { get; set; }
 
-        [IgnoreMap]
-		public IFormFile File { get; set; }
+        [IgnoreMap] //net6change
+        public IFormFile File { get; set; }
 
         [Range(ModelConstants.OrderByMinValue, ModelConstants.OrderByMaxValue)]
         public int OrderBy { get; set; }

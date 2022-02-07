@@ -1,0 +1,466 @@
+2022-01-17 09:55:50.038 +02:00 [INF] User profile is available. Using 'C:\Users\Jora\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-01-17 09:55:51.646 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-17 09:55:52.004 +02:00 [INF] Executed DbCommand (84ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-01-17 09:55:52.012 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2022-01-17 09:55:52.022 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2022-01-17 09:55:52.034 +02:00 [INF] No migrations were applied. The database is already up to date.
+2022-01-17 09:55:52.256 +02:00 [INF] Executed DbCommand (77ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[ConcurrencyStamp], [e].[CreatedOn], [e].[DeletedOn], [e].[IsDeleted], [e].[ModifiedOn], [e].[Name], [e].[NormalizedName]
+FROM [AspNetRoles] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[NormalizedName] = @__normalizedName_0)
+2022-01-17 09:55:52.334 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[ConcurrencyStamp], [e].[CreatedOn], [e].[DeletedOn], [e].[IsDeleted], [e].[ModifiedOn], [e].[Name], [e].[NormalizedName]
+FROM [AspNetRoles] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[NormalizedName] = @__normalizedName_0)
+2022-01-17 09:55:52.336 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[ConcurrencyStamp], [e].[CreatedOn], [e].[DeletedOn], [e].[IsDeleted], [e].[ModifiedOn], [e].[Name], [e].[NormalizedName]
+FROM [AspNetRoles] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[NormalizedName] = @__normalizedName_0)
+2022-01-17 09:55:52.336 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[ConcurrencyStamp], [e].[CreatedOn], [e].[DeletedOn], [e].[IsDeleted], [e].[ModifiedOn], [e].[Name], [e].[NormalizedName]
+FROM [AspNetRoles] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[NormalizedName] = @__normalizedName_0)
+2022-01-17 09:55:52.337 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[ConcurrencyStamp], [e].[CreatedOn], [e].[DeletedOn], [e].[IsDeleted], [e].[ModifiedOn], [e].[Name], [e].[NormalizedName]
+FROM [AspNetRoles] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[NormalizedName] = @__normalizedName_0)
+2022-01-17 09:55:52.360 +02:00 [INF] Seeder RolesSeeder done.
+2022-01-17 09:55:52.366 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-17 09:55:52.403 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-01-17 09:55:52.406 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-01-17 09:55:52.407 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-01-17 09:55:52.407 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-01-17 09:55:52.408 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-01-17 09:55:52.408 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-01-17 09:55:52.409 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-01-17 09:55:52.410 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-01-17 09:55:52.410 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-01-17 09:55:52.411 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-01-17 09:55:52.411 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-01-17 09:55:52.412 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-01-17 09:55:52.412 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-01-17 09:55:52.413 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-01-17 09:55:52.414 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-01-17 09:55:52.414 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-01-17 09:55:52.415 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-01-17 09:55:52.415 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-01-17 09:55:52.416 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-01-17 09:55:52.416 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-01-17 09:55:52.417 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-01-17 09:55:52.417 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-01-17 09:55:52.418 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-01-17 09:55:52.418 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-01-17 09:55:52.419 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__classNumber_0='?' (DbType = Int32), @__classType_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [SchoolClasses] AS [e]
+        WHERE ([e].[IsDeleted] = 0) AND (([e].[ClassNumber] = @__classNumber_0) AND ([e].[ClassType] = @__classType_1)))
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2022-01-17 09:55:52.421 +02:00 [INF] Seeder SchoolClassesSeeder done.
+2022-01-17 09:55:52.457 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedOn], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[IsDeleted], [e].[IsFromActiveDirectory], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedOn], [e].[Name], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[StudentId], [e].[Surname], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[NormalizedUserName] = @__normalizedUserName_0)
+2022-01-17 09:55:52.516 +02:00 [INF] Seeder AdminSeeder done.
+2022-01-17 09:55:53.887 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/  
+2022-01-17 09:55:53.940 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-17 09:55:53.957 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[CreatedOn], [e].[DeletedOn], [e].[Email], [e].[EmailConfirmed], [e].[IsDeleted], [e].[IsFromActiveDirectory], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[ModifiedOn], [e].[Name], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[StudentId], [e].[Surname], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[Id] = @__get_Item_0)
+2022-01-17 09:55:54.009 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+2022-01-17 09:55:54.047 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN (
+    SELECT [e].*
+    FROM [AspNetRoles] AS [e]
+    WHERE [e].[IsDeleted] = 0
+) AS [t] ON [userRole].[RoleId] = [t].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+2022-01-17 09:55:54.052 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[ConcurrencyStamp], [e].[CreatedOn], [e].[DeletedOn], [e].[IsDeleted], [e].[ModifiedOn], [e].[Name], [e].[NormalizedName]
+FROM [AspNetRoles] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[NormalizedName] = @__normalizedName_0)
+2022-01-17 09:55:54.068 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2022-01-17 09:55:54.071 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[ConcurrencyStamp], [e].[CreatedOn], [e].[DeletedOn], [e].[IsDeleted], [e].[ModifiedOn], [e].[Name], [e].[NormalizedName]
+FROM [AspNetRoles] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[NormalizedName] = @__normalizedName_0)
+2022-01-17 09:55:54.072 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2022-01-17 09:55:54.073 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[ConcurrencyStamp], [e].[CreatedOn], [e].[DeletedOn], [e].[IsDeleted], [e].[ModifiedOn], [e].[Name], [e].[NormalizedName]
+FROM [AspNetRoles] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[NormalizedName] = @__normalizedName_0)
+2022-01-17 09:55:54.073 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+2022-01-17 09:55:54.158 +02:00 [INF] Executing endpoint 'JudgeSystem.Web.Controllers.HomeController.Index (JudgeSystem.Web)'
+2022-01-17 09:55:54.173 +02:00 [INF] Route matched with {action = "Index", controller = "Home", area = "", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller JudgeSystem.Web.Controllers.HomeController (JudgeSystem.Web).
+2022-01-17 09:55:54.186 +02:00 [INF] Executing action method JudgeSystem.Web.Controllers.HomeController.Index (JudgeSystem.Web) - Validation state: "Valid"
+2022-01-17 09:55:54.189 +02:00 [INF] Executed action method JudgeSystem.Web.Controllers.HomeController.Index (JudgeSystem.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.3663ms.
+2022-01-17 09:55:54.209 +02:00 [INF] Executing ViewResult, running view Index.
+2022-01-17 09:55:54.348 +02:00 [WRN] The LINQ expression 'where [e].IsActive' could not be translated and will be evaluated locally.
+2022-01-17 09:55:54.356 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[CreatedOn], [e].[DeletedOn], [e].[EndTime], [e].[IsDeleted], [e].[LessonId], [e].[ModifiedOn], [e].[Name], [e].[StartTime]
+FROM [Contests] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[IsDeleted] = 0)
+2022-01-17 09:55:54.400 +02:00 [WRN] The LINQ expression 'where ((DateTime.Now - [e].EndTime).Days <= __passedDays_0)' could not be translated and will be evaluated locally.
+2022-01-17 09:55:54.424 +02:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[EndTime], [e].[LessonId], [t0].[Id] AS [LessonPracticeId], [e].[Name]
+FROM [Contests] AS [e]
+INNER JOIN (
+    SELECT [e0].*
+    FROM [Lessons] AS [e0]
+    WHERE [e0].[IsDeleted] = 0
+) AS [t] ON [e].[LessonId] = [t].[Id]
+LEFT JOIN (
+    SELECT [e1].*
+    FROM [Practices] AS [e1]
+    WHERE [e1].[IsDeleted] = 0
+) AS [t0] ON [t].[Id] = [t0].[LessonId]
+WHERE (([e].[IsDeleted] = 0) AND ([e].[IsDeleted] = 0)) AND ([e].[EndTime] < GETDATE())
+2022-01-17 09:55:54.883 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [x].[PracticeId]
+FROM [UserPractices] AS [x]
+WHERE [x].[UserId] = @__userId_0
+2022-01-17 09:55:54.905 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id] AS [Id0], [e].[Name], [t].[Id] AS [PracticeId], [e].[Type]
+FROM [Lessons] AS [e]
+LEFT JOIN (
+    SELECT [e0].*
+    FROM [Practices] AS [e0]
+    WHERE [e0].[IsDeleted] = 0
+) AS [t] ON [e].[Id] = [t].[LessonId]
+WHERE (([e].[IsDeleted] = 0) AND ([e].[IsDeleted] = 0)) AND [t].[Id] NOT IN (1, 2, 3, 4, 5, 1002)
+2022-01-17 09:55:55.053 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[Name]
+FROM [Courses] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[IsDeleted] = 0)
+ORDER BY [e].[OrderBy]
+2022-01-17 09:55:55.143 +02:00 [INF] Executed ViewResult - view Index executed in 946.05080000000009ms.
+2022-01-17 09:55:55.149 +02:00 [INF] Executed action JudgeSystem.Web.Controllers.HomeController.Index (JudgeSystem.Web) in 975.74340000000007ms
+2022-01-17 09:55:55.150 +02:00 [INF] Executed endpoint 'JudgeSystem.Web.Controllers.HomeController.Index (JudgeSystem.Web)'
+2022-01-17 09:55:55.197 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/css/bootstrap.css?v=Nfu23DiRqsrx_6B6vsI0T9vEVKq1M6KgO8-TV363g3s  
+2022-01-17 09:55:55.210 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-datetimepicker/jquery.datetimepicker.min.css?v=DOS9W6NR-NFe1fUhEE0PGKY_fubbUCnOfTje2JMDw3Y  
+2022-01-17 09:55:55.212 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/font-awesome/css/all.css?v=39jKbsb_ty7s7-4WzbtELS4vq9udJ-MDjGTD5mtxHZ0  
+2022-01-17 09:55:55.212 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/css/site.css?v=jT6ZhGgUouAgCoUdt_5QrOqexAI7u8RHM7KVGkLsdL8  
+2022-01-17 09:55:55.212 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/codemirror/codemirror.css?v=o_v_5fOniPHMAww4EAIfRBFV0SeoqksPrY0Yq5x-wSM  
+2022-01-17 09:55:55.215 +02:00 [INF] Sending file. Request path: '/lib/codemirror/codemirror.css'. Physical path: 'C:\Users\Jora\source\repos\BlankfactorJudge\JudgeSystem\Web\JudgeSystem.Web\wwwroot\lib\codemirror\codemirror.css'
+2022-01-17 09:55:55.217 +02:00 [INF] Request finished in 3.6426ms 200 text/css
+2022-01-17 09:55:55.217 +02:00 [INF] Request finished in 1335.7027ms 200 text/html; charset=utf-8
+2022-01-17 09:55:55.223 +02:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\Jora\source\repos\BlankfactorJudge\JudgeSystem\Web\JudgeSystem.Web\wwwroot\css\site.css'
+2022-01-17 09:55:55.223 +02:00 [INF] Sending file. Request path: '/lib/jquery-datetimepicker/jquery.datetimepicker.min.css'. Physical path: 'C:\Users\Jora\source\repos\BlankfactorJudge\JudgeSystem\Web\JudgeSystem.Web\wwwroot\lib\jquery-datetimepicker\jquery.datetimepicker.min.css'
+2022-01-17 09:55:55.223 +02:00 [INF] Request finished in 11.2497ms 200 text/css
+2022-01-17 09:55:55.223 +02:00 [INF] Request finished in 12.814ms 200 text/css
+2022-01-17 09:55:55.224 +02:00 [INF] Sending file. Request path: '/lib/font-awesome/css/all.css'. Physical path: 'C:\Users\Jora\source\repos\BlankfactorJudge\JudgeSystem\Web\JudgeSystem.Web\wwwroot\lib\font-awesome\css\all.css'
+2022-01-17 09:55:55.224 +02:00 [INF] Request finished in 12.4028ms 200 text/css
+2022-01-17 09:55:55.226 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery/dist/jquery.js?v=2Kok7MbOyxpgUVvAk_HJ2jigOSYS2auK4Pfzbm7uH60  
+2022-01-17 09:55:55.226 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/popper.js/umd/popper.min.js?v=fTuUgtT7O2rqoImwjrhDgbXTKUwyxxujIMRIK7TbuNU  
+2022-01-17 09:55:55.227 +02:00 [INF] Sending file. Request path: '/lib/popper.js/umd/popper.min.js'. Physical path: 'C:\Users\Jora\source\repos\BlankfactorJudge\JudgeSystem\Web\JudgeSystem.Web\wwwroot\lib\popper.js\umd\popper.min.js'
+2022-01-17 09:55:55.227 +02:00 [INF] Request finished in 1.2458ms 200 application/javascript
+2022-01-17 09:55:55.227 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-validation/dist/jquery.validate.js?v=3wZUfSG5dGfk0T4JuEntmGIZVpBkdJCk7xY7zvVWfZc  
+2022-01-17 09:55:55.227 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js?v=XNNC8ESw29iopRLukVRazlP44TxnjGmEQanHJ5kHmtk  
+2022-01-17 09:55:55.228 +02:00 [INF] Sending file. Request path: '/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js'. Physical path: 'C:\Users\Jora\source\repos\BlankfactorJudge\JudgeSystem\Web\JudgeSystem.Web\wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js'
+2022-01-17 09:55:55.229 +02:00 [INF] Request finished in 1.3347ms 200 application/javascript
+2022-01-17 09:55:55.229 +02:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'C:\Users\Jora\source\repos\BlankfactorJudge\JudgeSystem\Web\JudgeSystem.Web\wwwroot\lib\jquery\dist\jquery.js'
+2022-01-17 09:55:55.229 +02:00 [INF] Request finished in 3.0417ms 200 application/javascript
+2022-01-17 09:55:55.231 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/jquery-datetimepicker/jquery.datetimepicker.full.min.js?v=FEqEelWI3WouFOo2VWP_uJfs1y8KJ--FLh2Lbqc8SJk  
+2022-01-17 09:55:55.231 +02:00 [INF] Sending file. Request path: '/lib/jquery-validation/dist/jquery.validate.js'. Physical path: 'C:\Users\Jora\source\repos\BlankfactorJudge\JudgeSystem\Web\JudgeSystem.Web\wwwroot\lib\jquery-validation\dist\jquery.validate.js'
+2022-01-17 09:55:55.232 +02:00 [INF] Request finished in 4.3185ms 200 application/javascript
+2022-01-17 09:55:55.235 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/bootstrap/dist/js/bootstrap.js?v=pl1bSrtlqtN_MCyW8XUTYuJCKohp9_iJESVW1344SBM  
+2022-01-17 09:55:55.237 +02:00 [INF] Sending file. Request path: '/lib/jquery-datetimepicker/jquery.datetimepicker.full.min.js'. Physical path: 'C:\Users\Jora\source\repos\BlankfactorJudge\JudgeSystem\Web\JudgeSystem.Web\wwwroot\lib\jquery-datetimepicker\jquery.datetimepicker.full.min.js'
+2022-01-17 09:55:55.237 +02:00 [INF] Request finished in 6.2121ms 200 application/javascript
+2022-01-17 09:55:55.237 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/js/site.js?v=pFCKW2Me85Q4MXObddnz0w6mBEF7MBGST-Wa7myrZlY  
+2022-01-17 09:55:55.238 +02:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\Jora\source\repos\BlankfactorJudge\JudgeSystem\Web\JudgeSystem.Web\wwwroot\js\site.js'
+2022-01-17 09:55:55.238 +02:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'C:\Users\Jora\source\repos\BlankfactorJudge\JudgeSystem\Web\JudgeSystem.Web\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+2022-01-17 09:55:55.238 +02:00 [INF] Request finished in 1.3155ms 200 application/javascript
+2022-01-17 09:55:55.238 +02:00 [INF] Request finished in 41.1378ms 200 text/css
+2022-01-17 09:55:55.248 +02:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.js'. Physical path: 'C:\Users\Jora\source\repos\BlankfactorJudge\JudgeSystem\Web\JudgeSystem.Web\wwwroot\lib\bootstrap\dist\js\bootstrap.js'
+2022-01-17 09:55:55.248 +02:00 [INF] Request finished in 13.1783ms 200 application/javascript
+2022-01-17 09:55:55.360 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/lib/font-awesome/webfonts/fa-solid-900.woff2  
+2022-01-17 09:55:55.362 +02:00 [INF] Sending file. Request path: '/lib/font-awesome/webfonts/fa-solid-900.woff2'. Physical path: 'C:\Users\Jora\source\repos\BlankfactorJudge\JudgeSystem\Web\JudgeSystem.Web\wwwroot\lib\font-awesome\webfonts\fa-solid-900.woff2'
+2022-01-17 09:55:55.362 +02:00 [INF] Request finished in 2.6975ms 200 font/woff2
+2022-01-17 09:56:05.899 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Course/Lessons?courseId=1002  
+2022-01-17 09:56:05.904 +02:00 [INF] Executing endpoint 'JudgeSystem.Web.Controllers.CourseController.Lessons (JudgeSystem.Web)'
+2022-01-17 09:56:05.921 +02:00 [INF] Route matched with {action = "Lessons", controller = "Course", area = "", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Lessons(Int32) on controller JudgeSystem.Web.Controllers.CourseController (JudgeSystem.Web).
+2022-01-17 09:56:05.922 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-17 09:56:05.933 +02:00 [INF] Executing action method JudgeSystem.Web.Controllers.CourseController.Lessons (JudgeSystem.Web) - Validation state: "Valid"
+2022-01-17 09:56:05.988 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[@__courseId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[CourseId], [e].[Id] AS [Id0], [e].[Name], [t].[Id] AS [PracticeId], (
+    SELECT COUNT(*)
+    FROM [Problems] AS [e1]
+    WHERE ([e1].[IsDeleted] = 0) AND ([e].[Id] = [e1].[LessonId])
+) AS [ProblemsCount], [e].[Type]
+FROM [Lessons] AS [e]
+LEFT JOIN (
+    SELECT [e0].*
+    FROM [Practices] AS [e0]
+    WHERE [e0].[IsDeleted] = 0
+) AS [t] ON [e].[Id] = [t].[LessonId]
+WHERE (([e].[IsDeleted] = 0) AND ([e].[IsDeleted] = 0)) AND ([e].[CourseId] = @__courseId_0)
+ORDER BY [e].[Id]
+2022-01-17 09:56:05.998 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@__courseId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t1].[Id], [e.Contests].[Id] AS [Id0], [e.Contests].[Name], [e.Contests].[LessonId]
+FROM [Contests] AS [e.Contests]
+INNER JOIN (
+    SELECT [e2].[Id]
+    FROM [Lessons] AS [e2]
+    LEFT JOIN (
+        SELECT [e3].*
+        FROM [Practices] AS [e3]
+        WHERE [e3].[IsDeleted] = 0
+    ) AS [t0] ON [e2].[Id] = [t0].[LessonId]
+    WHERE (([e2].[IsDeleted] = 0) AND ([e2].[IsDeleted] = 0)) AND ([e2].[CourseId] = @__courseId_0)
+) AS [t1] ON [e.Contests].[LessonId] = [t1].[Id]
+WHERE ([e.Contests].[IsDeleted] = 0) AND (([e.Contests].[StartTime] < GETDATE()) AND ([e.Contests].[EndTime] > GETDATE()))
+ORDER BY [t1].[Id]
+2022-01-17 09:56:06.018 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__courseId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Name]
+FROM [Courses] AS [e]
+WHERE (([e].[IsDeleted] = 0) AND ([e].[IsDeleted] = 0)) AND ([e].[Id] = @__courseId_0)
+2022-01-17 09:56:06.020 +02:00 [INF] Executed action method JudgeSystem.Web.Controllers.CourseController.Lessons (JudgeSystem.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 85.9975ms.
+2022-01-17 09:56:06.026 +02:00 [INF] Executing ViewResult, running view Lessons.
+2022-01-17 09:56:06.051 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[Name]
+FROM [Courses] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[IsDeleted] = 0)
+ORDER BY [e].[OrderBy]
+2022-01-17 09:56:06.054 +02:00 [INF] Executed ViewResult - view Lessons executed in 34.5598ms.
+2022-01-17 09:56:06.055 +02:00 [INF] Executed action JudgeSystem.Web.Controllers.CourseController.Lessons (JudgeSystem.Web) in 133.2106ms
+2022-01-17 09:56:06.055 +02:00 [INF] Executed endpoint 'JudgeSystem.Web.Controllers.CourseController.Lessons (JudgeSystem.Web)'
+2022-01-17 09:56:06.056 +02:00 [INF] Request finished in 157.1953ms 200 text/html; charset=utf-8
+2022-01-17 09:57:00.805 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:5001/Course/Lessons?courseId=1002  
+2022-01-17 09:57:00.811 +02:00 [INF] Executing endpoint 'JudgeSystem.Web.Controllers.CourseController.Lessons (JudgeSystem.Web)'
+2022-01-17 09:57:00.811 +02:00 [INF] Route matched with {action = "Lessons", controller = "Course", area = "", page = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Lessons(Int32) on controller JudgeSystem.Web.Controllers.CourseController (JudgeSystem.Web).
+2022-01-17 09:57:00.812 +02:00 [INF] Entity Framework Core 2.2.6-servicing-10079 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2022-01-17 09:57:00.812 +02:00 [INF] Executing action method JudgeSystem.Web.Controllers.CourseController.Lessons (JudgeSystem.Web) - Validation state: "Valid"
+2022-01-17 09:57:00.828 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[@__courseId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[CourseId], [e].[Id] AS [Id0], [e].[Name], [t].[Id] AS [PracticeId], (
+    SELECT COUNT(*)
+    FROM [Problems] AS [e1]
+    WHERE ([e1].[IsDeleted] = 0) AND ([e].[Id] = [e1].[LessonId])
+) AS [ProblemsCount], [e].[Type]
+FROM [Lessons] AS [e]
+LEFT JOIN (
+    SELECT [e0].*
+    FROM [Practices] AS [e0]
+    WHERE [e0].[IsDeleted] = 0
+) AS [t] ON [e].[Id] = [t].[LessonId]
+WHERE (([e].[IsDeleted] = 0) AND ([e].[IsDeleted] = 0)) AND ([e].[CourseId] = @__courseId_0)
+ORDER BY [e].[Id]
+2022-01-17 09:57:00.833 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__courseId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t1].[Id], [e.Contests].[Id] AS [Id0], [e.Contests].[Name], [e.Contests].[LessonId]
+FROM [Contests] AS [e.Contests]
+INNER JOIN (
+    SELECT [e2].[Id]
+    FROM [Lessons] AS [e2]
+    LEFT JOIN (
+        SELECT [e3].*
+        FROM [Practices] AS [e3]
+        WHERE [e3].[IsDeleted] = 0
+    ) AS [t0] ON [e2].[Id] = [t0].[LessonId]
+    WHERE (([e2].[IsDeleted] = 0) AND ([e2].[IsDeleted] = 0)) AND ([e2].[CourseId] = @__courseId_0)
+) AS [t1] ON [e.Contests].[LessonId] = [t1].[Id]
+WHERE ([e.Contests].[IsDeleted] = 0) AND (([e.Contests].[StartTime] < GETDATE()) AND ([e.Contests].[EndTime] > GETDATE()))
+ORDER BY [t1].[Id]
+2022-01-17 09:57:00.836 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__courseId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Name]
+FROM [Courses] AS [e]
+WHERE (([e].[IsDeleted] = 0) AND ([e].[IsDeleted] = 0)) AND ([e].[Id] = @__courseId_0)
+2022-01-17 09:57:00.836 +02:00 [INF] Executed action method JudgeSystem.Web.Controllers.CourseController.Lessons (JudgeSystem.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 23.764000000000003ms.
+2022-01-17 09:57:00.837 +02:00 [INF] Executing ViewResult, running view Lessons.
+2022-01-17 09:57:00.841 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[Name]
+FROM [Courses] AS [e]
+WHERE ([e].[IsDeleted] = 0) AND ([e].[IsDeleted] = 0)
+ORDER BY [e].[OrderBy]
+2022-01-17 09:57:00.843 +02:00 [INF] Executed ViewResult - view Lessons executed in 6.5054000000000007ms.
+2022-01-17 09:57:00.843 +02:00 [INF] Executed action JudgeSystem.Web.Controllers.CourseController.Lessons (JudgeSystem.Web) in 31.684900000000003ms
+2022-01-17 09:57:00.843 +02:00 [INF] Executed endpoint 'JudgeSystem.Web.Controllers.CourseController.Lessons (JudgeSystem.Web)'
+2022-01-17 09:57:00.847 +02:00 [INF] Request finished in 41.3227ms 200 text/html; charset=utf-8

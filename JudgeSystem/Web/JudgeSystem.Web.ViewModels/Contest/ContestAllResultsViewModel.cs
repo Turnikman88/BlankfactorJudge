@@ -12,7 +12,7 @@ namespace JudgeSystem.Web.ViewModels.Contest
 
 		public string Name { get; set; }
 
-		public List<ContestResultViewModel> ContestResults { get; set; }
+        public List<ContestResultViewModel> ContestResults { get; set; }
 
 		public List<ContestProblemViewModel> Problems { get; set; }
 

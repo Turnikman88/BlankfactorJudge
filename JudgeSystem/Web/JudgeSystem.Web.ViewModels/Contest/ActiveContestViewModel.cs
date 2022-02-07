@@ -16,13 +16,13 @@ namespace JudgeSystem.Web.ViewModels.Contest
 
 		public DateTime EndTime { get; set; }
 
-		[IgnoreMap]
-		public int RemainingDays => (EndTime - DateTime.Now).Days;
+        [IgnoreMap] //net6change
+        public int RemainingDays => (EndTime - DateTime.Now).Days;
 
-		[IgnoreMap]
-		public int RemainingHours => (EndTime - DateTime.Now).Hours;
+        [IgnoreMap] //net6change
+        public int RemainingHours => (EndTime - DateTime.Now).Hours;
 
-		[IgnoreMap]
-		public int RemainingMinutes => (EndTime - DateTime.Now).Minutes;
+        [IgnoreMap] //net6change
+        public int RemainingMinutes => (EndTime - DateTime.Now).Minutes;
 	}
 }

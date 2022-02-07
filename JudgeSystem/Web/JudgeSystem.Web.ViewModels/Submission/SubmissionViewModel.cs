@@ -19,7 +19,7 @@ namespace JudgeSystem.Web.ViewModels.Submission
 
         public string CompilationErrors { get; set; }
 
-        [IgnoreMap]
+        [IgnoreMap] //net6change
         public bool CompiledSucessfully => string.IsNullOrEmpty(CompilationErrors);
 
         public string ProblemName { get; set; }

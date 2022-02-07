@@ -26,7 +26,7 @@ namespace JudgeSystem.Web.InputModels.Test
         [Display(Name = ModelConstants.TestIsTrialTestDisplayName)]
         public bool IsTrialTest { get; set; }
 
-        [IgnoreMap]
+        [IgnoreMap] //net6change
         public int LessonId { get; set; }
 
         public string ProblemName { get; set; }

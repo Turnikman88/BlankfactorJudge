@@ -44,8 +44,9 @@ namespace JudgeSystem.Services.Mapping
                     map.CreateMappings(configuration);
                 }
             });
-
+            // net6change
             Mapper.Initialize(config);
+            
         }
 
         private static IEnumerable<TypesMap> GetFromMaps(IEnumerable<Type> types)

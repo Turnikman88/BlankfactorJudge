@@ -16,7 +16,6 @@ using JudgeSystem.Web.Tests.TestData;
 using JudgeSystem.Web.ViewModels.Problem;
 
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http.Internal;
 
 using MyTested.AspNetCore.Mvc;
 using Xunit;

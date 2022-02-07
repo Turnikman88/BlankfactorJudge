@@ -11,20 +11,15 @@ namespace JudgeSystem.Web.Configuration
 
         public static IServiceCollection ConfigureMvc(this IServiceCollection services)
         {
-            services
-                .AddMvc(options =>
-                {
-                    options.Filters.Add<EntityNotFoundExceptionFilter>(EntityNotFoundExceptionFilterOrder);
-                })
-                .AddViewLocalization()
-                .AddMvcLocalization()
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+            services.AddControllersWithViews().AddViewLocalization();
+            services.AddRazorPages()
                 .AddRazorPagesOptions(options =>
                 {
-                    options.AllowAreas = true;
+                    // options.AllowAreas = true; net6change/
                     options.Conventions.AuthorizeAreaFolder("Identity", "/Account/Manage");
                     options.Conventions.AuthorizeAreaPage("Identity", "/Account/Logout");
-                });
+                })
+                .AddRazorRuntimeCompilation();
 
             return services;
         }

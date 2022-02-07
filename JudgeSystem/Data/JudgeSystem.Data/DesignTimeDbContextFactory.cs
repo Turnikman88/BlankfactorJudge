@@ -22,8 +22,8 @@ namespace JudgeSystem.Data
 
             builder.UseSqlServer(connectionString);
 
-            // Stop client query evaluation
-            builder.ConfigureWarnings(w => w.Throw(RelationalEventId.QueryClientEvaluationWarning));
+            // Stop client query evaluation //net6
+            //builder.ConfigureWarnings(w => w.Throw(RelationalEventId.QueryPossibleExceptionWithAggregateOperatorWarning));
 
             return new ApplicationDbContext(builder.Options);
         }

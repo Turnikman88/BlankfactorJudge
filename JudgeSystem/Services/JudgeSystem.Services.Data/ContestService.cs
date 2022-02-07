@@ -94,9 +94,9 @@ namespace JudgeSystem.Services.Data
 
 		public IEnumerable<PreviousContestViewModel> GetPreviousContests(int passedDays)
 		{
-			var contests = repository.All()
+			var contests = repository.All().AsEnumerable()
 				.Where(c => c.EndTime < DateTime.Now && (DateTime.Now - c.EndTime).Days <= passedDays)
-				.To<PreviousContestViewModel>()
+				.Select(x => x.To<PreviousContestViewModel>())
                 .ToList();
 
 			return contests;
