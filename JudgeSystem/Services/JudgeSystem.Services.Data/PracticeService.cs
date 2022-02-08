@@ -59,6 +59,9 @@ namespace JudgeSystem.Services.Data
         public PracticeAllResultsViewModel GetPracticeResults(int id, int page, int entitesPerPage)
         {
             PracticeAllResultsViewModel model = repository.All()
+                .Include(x => x.Lesson).ThenInclude(x => x.Problems)
+                .Include(x => x.UserPractices).ThenInclude(x => x.User).ThenInclude(x => x.Submissions)
+                .ToList()
                 .Where(practice => practice.Id == id)
                 .Select(practice => new PracticeAllResultsViewModel()
                 {
@@ -72,8 +75,7 @@ namespace JudgeSystem.Services.Data
                         Name = problem.Name,
                         IsExtraTask = problem.IsExtraTask,
                         //MaxPoints = problem.Submissions.Where(x => x.ProblemId == ),
-                        MaxPoints = problem.MaxPoints,
-                       
+                        MaxPoints = problem.MaxPoints,                       
                     })
                     .ToList(),
                     PracticeResults = practice.UserPractices
@@ -85,8 +87,8 @@ namespace JudgeSystem.Services.Data
                         PointsByProblem = userPractice.User.Submissions
                         .Where(submission => submission.PracticeId == practice.Id)
                         .GroupBy(submission => submission.ProblemId)
-                        .ToDictionary(problemBySubmissions => 
-                            problemBySubmissions.Key, 
+                        .ToDictionary(problemBySubmissions =>
+                            problemBySubmissions.Key,
                             submissions => submissions.Max(s => s.ActualPoints))
                     })                    
                     .OrderByDescending(cr => cr.Total)

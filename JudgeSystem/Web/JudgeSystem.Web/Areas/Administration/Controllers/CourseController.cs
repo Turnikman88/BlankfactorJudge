@@ -30,7 +30,7 @@ namespace JudgeSystem.Web.Areas.Administration.Controllers
 
             await courseService.Add(model);
 
-            return RedirectToAction("All", "Course");
+            return RedirectToAction("All", "Course", new { area = "" });
         }
 
         public IActionResult Edit(int id)
@@ -50,7 +50,7 @@ namespace JudgeSystem.Web.Areas.Administration.Controllers
 
             await courseService.Updade(model);
 
-            return RedirectToAction("All", "Course");
+            return RedirectToAction("All", "Course", new { area = "" });
         }
 
         public IActionResult Delete(int id)
@@ -65,7 +65,7 @@ namespace JudgeSystem.Web.Areas.Administration.Controllers
         public async Task<IActionResult> DeleteConfirm(int id)
         {
             await courseService.Delete(id);
-            return RedirectToAction("All", "Course");
+            return RedirectToAction("All", "Course", new { area = "" });
         }
     }
 }

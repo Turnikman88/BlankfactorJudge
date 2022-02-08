@@ -139,7 +139,16 @@ namespace JudgeSystem.Web.Controllers
             if (timeIntervalBetweenSubmissionInSeconds >= GlobalConstants.DefaultTimeIntervalBetweenSubmissionInSeconds)
             {
                 string key = $"{User.Identity.Name}#{nameof(model.ProblemId)}:{model.ProblemId}";
-                string lastSubmissionDateTime = cache.GetString(key);
+                string lastSubmissionDateTime;
+                try
+                {
+                    lastSubmissionDateTime = cache.GetString(key);
+                }
+                catch (Exception e)
+                {
+
+                    throw;
+                }
                 if (lastSubmissionDateTime == null)
                 {
                     AddClintIpInCache(key, timeIntervalBetweenSubmissionInSeconds);
