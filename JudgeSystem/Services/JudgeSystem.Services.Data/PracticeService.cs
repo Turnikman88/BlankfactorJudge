@@ -11,6 +11,7 @@ using JudgeSystem.Web.ViewModels.Problem;
 using JudgeSystem.Common.Extensions;
 
 using Microsoft.EntityFrameworkCore;
+using JudgeSystem.Data;
 
 namespace JudgeSystem.Services.Data
 {
@@ -19,15 +20,18 @@ namespace JudgeSystem.Services.Data
         private readonly IDeletableEntityRepository<Practice> repository;
         private readonly IRepository<UserPractice> userPracticeRepository;
         private readonly IPaginationService paginationService;
+        private readonly ApplicationDbContext applicationDb;
 
         public PracticeService(
             IDeletableEntityRepository<Practice> repository, 
             IRepository<UserPractice> userPracticeRepository,
-            IPaginationService paginationService)
+            IPaginationService paginationService,
+            ApplicationDbContext applicationDb)
         {
             this.repository = repository;
             this.userPracticeRepository = userPracticeRepository;
             this.paginationService = paginationService;
+            this.applicationDb = applicationDb;
         }
 
         public async Task AddUserToPracticeIfNotAdded(string userId, int practiceId)
@@ -58,7 +62,7 @@ namespace JudgeSystem.Services.Data
 
         public PracticeAllResultsViewModel GetPracticeResults(int id, int page, int entitesPerPage)
         {
-            PracticeAllResultsViewModel model = repository.All()
+            PracticeAllResultsViewModel model = applicationDb.Practices
                 .Include(x => x.Lesson).ThenInclude(x => x.Problems)
                 .Include(x => x.UserPractices).ThenInclude(x => x.User).ThenInclude(x => x.Submissions)
                 .ToList()
@@ -74,7 +78,6 @@ namespace JudgeSystem.Services.Data
                         Id = problem.Id,
                         Name = problem.Name,
                         IsExtraTask = problem.IsExtraTask,
-                        //MaxPoints = problem.Submissions.Where(x => x.ProblemId == ),
                         MaxPoints = problem.MaxPoints,                       
                     })
                     .ToList(),
@@ -90,7 +93,7 @@ namespace JudgeSystem.Services.Data
                         .ToDictionary(problemBySubmissions =>
                             problemBySubmissions.Key,
                             submissions => submissions.Max(s => s.ActualPoints))
-                    })                    
+                    })
                     .OrderByDescending(cr => cr.Total)
                     .ThenBy(cr => cr.Username)
                     .GetPage(page, entitesPerPage)

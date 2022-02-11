@@ -55,7 +55,7 @@ namespace JudgeSystem.Web.Areas.Administration.Controllers
                 await resourceService.CreateResource(model, filePath);
             }
 
-            return RedirectToAction("Details", "Lesson", new { id = model.LessonId, model.PracticeId });
+            return RedirectToAction("Details", "Lesson", new { area = "", id = model.LessonId, model.PracticeId });
 		}
 
 		public IActionResult LessonResources(int lessonId, int practiceId)

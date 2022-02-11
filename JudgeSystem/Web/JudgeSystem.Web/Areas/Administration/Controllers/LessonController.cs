@@ -38,7 +38,7 @@ namespace JudgeSystem.Web.Areas.Administration.Controllers
             LessonDto lesson = await lessonService.Create(model);
             int practiceId = await practiceService.Create(lesson.Id);
 
-            return RedirectToAction("Details", "Lesson", new { id = lesson.Id, PracticeId = practiceId });
+            return RedirectToAction("Details", "Lesson", new { area = "", id = lesson.Id, PracticeId = practiceId });
         }
 
         public async Task<IActionResult> Edit(int id)
@@ -58,7 +58,7 @@ namespace JudgeSystem.Web.Areas.Administration.Controllers
 
             LessonDto lesson = await lessonService.Update(model);
 
-            return RedirectToAction("Lessons", "Course", new { lesson.CourseId });
+            return RedirectToAction("Lessons", "Course", new { area = "", lesson.CourseId });
         }
 
         public IActionResult AddPassword() => View();

@@ -77,11 +77,11 @@ namespace JudgeSystem.Compilers
 			{
 				RuntimeOptions = new
 				{
-					Tfm = "netcoreapp2.2",
+					Tfm = "net6.0",
 					Framework = new
 					{
 						Name = "Microsoft.NETCore.App",
-						Version = "2.2.0"
+						Version = "6.0.1"
 					}
 				}
 			};
