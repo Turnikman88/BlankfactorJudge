@@ -150,7 +150,7 @@ namespace JudgeSystem.Web.Controllers
                     double secondsToWaitUntilNextSubmission = timeIntervalBetweenSubmissionInSeconds - passedSeconds;
                     if (secondsToWaitUntilNextSubmission > 0)
                     {
-                        return BadRequest(string.Format(ErrorMessages.SendSubmissionToEarly, Math.Ceiling(secondsToWaitUntilNextSubmission)));
+                            return BadRequest(string.Format(ErrorMessages.SendSubmissionToEarly, Math.Ceiling(secondsToWaitUntilNextSubmission)));
                     }
                 }
             }
